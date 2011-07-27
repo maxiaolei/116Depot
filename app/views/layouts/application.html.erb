@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -43,34 +41,3 @@
   </div> 
 </body> 
 </html> 
-=======
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Pragprog Books Online Stores</title>
-  <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => "all" %>
-  
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body id="store">
-	<div id="banner">
-		<%= image_tag("logo.png") %>
-		<%= @page_title || "Pragmatic Bookshelf" %>
-	</div>
-	<div id="columns">
-		<div id="side">
-			<a href="<%= flash[:store_url] %>" >Home</a><br />
-			<a href="<%= flash[:store_url] %>/faq" >Questions</a><br />
-			<a href="<%= flash[:store_url] %>/news" >News</a><br />
-			<a href="<%= flash[:store_url] %>/contact">Contact</a><br />
-		</div>
-		<div id="main">
-			<%= yield %>
-		</div>
-	</div>
-</body>
-</html>
-
->>>>>>> 3ae876a4685c17aafb9b3e9b3e7c806d0b111c2f

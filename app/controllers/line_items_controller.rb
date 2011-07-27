@@ -46,7 +46,6 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-<<<<<<< HEAD
         format.html { redirect_to(store_url) }
         format.js   { @current_item = @line_item }
         format.xml  { render :xml => @line_item,
@@ -55,15 +54,6 @@ class LineItemsController < ApplicationController
         format.html { render :action => "new" }
         format.xml  { render :xml => @line_item.errors,
           :status => :unprocessable_entity }
-=======
-        format.html { redirect_to(@line_item.cart, 
-          :notice => 'Line item was successfully created.') }
-        format.xml  { render :xml => @line_item, 
-          :status => :created, :location => @line_item }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
->>>>>>> 3ae876a4685c17aafb9b3e9b3e7c806d0b111c2f
       end
     end
   end
@@ -95,8 +85,4 @@ class LineItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 3ae876a4685c17aafb9b3e9b3e7c806d0b111c2f
