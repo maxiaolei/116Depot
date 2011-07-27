@@ -15,10 +15,10 @@
 	</div>
 	<div id="columns">
 		<div id="side">
-			<a href="http://www....">home</a><br />
-			<a href="http://www..../faq">Questions</a><br />
-			<a href="http://www..../news">News</a><br />
-			<a href="http://www..../contact">Contact</a><br />
+			<a href="<%= flash[:store_url] %>" >Home</a><br />
+			<a href="<%= flash[:store_url] %>/faq" >Questions</a><br />
+			<a href="<%= flash[:store_url] %>/news" >News</a><br />
+			<a href="<%= flash[:store_url] %>/contact">Contact</a><br />
 		</div>
 		<div id="main">
 			<%= yield %>
