@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+
+<% if notice %>
+<p id="notice"><%= notice %></p> 
+<% end %>
+ 
+<h1>Your Pragmatic Catalog</h1> 
+ 
+<% @products.each do |product| %>
+  <div class="entry"> 
+    <%= image_tag(product.image_url) %>
+    <h3><%= product.title %></h3> 
+    <%= sanitize(product.description) %>
+    <div class="price_line"> 
+      <span class="price"><%= number_to_currency(product.price) %></span> 
+<!-- START_HIGHLIGHT --> 
+      <%= button_to 'Add to Cart', line_items_path(:product_id => product),
+        :remote => true %>
+<!-- END_HIGHLIGHT --> 
+    </div> 
+  </div> 
+=======
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -14,4 +36,5 @@
 			<%= button_to 'Add to Cart',line_items_path(:product_id => product) %>
 		</div>
 	</div>
+>>>>>>> 3ae876a4685c17aafb9b3e9b3e7c806d0b111c2f
 <% end %>
