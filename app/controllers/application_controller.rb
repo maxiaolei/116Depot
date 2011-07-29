@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  skip_before_filter :authorize
   protect_from_forgery
   
   private
@@ -10,4 +11,11 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = cart.id
       cart
     end
+   protected
+     def authorize
+        unless User.find_by_id(session[:User_id])
+         redirect_to login_url,:notice=>"Please log in"
+        end
+     end
+
 end
