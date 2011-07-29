@@ -30,10 +30,10 @@
     <!-- END:hidden_div --> 
       <!-- END_HIGHLIGHT --> 
  
-      <a href="http://www....">Home</a><br /> 
-      <a href="http://www..../faq">Questions</a><br /> 
-      <a href="http://www..../news">News</a><br /> 
-      <a href="http://www..../contact">Contact</a><br /> 
+      <a href="<%= store_url %>">Home</a><br /> 
+      <a href="<%= store_url %>/faq">Questions</a><br /> 
+      <a href="<%= store_url %>/news">News</a><br /> 
+      <a href="<%= store_url %>/contact">Contact</a><br /> 
       <%if session[:user_id]%>
       <br/>
        <%=link_to 'Orders',orders_path %><br/>

@@ -1,4 +1,7 @@
 <div class="depot_form">
+	 <% if flash[:alert] %>
+  	<p id="notice"><%= flash[:alert] %></p> 		
+  	<% end %>
 	<%=form_tag do%>
 	<fieldset>
 		<legend>please Log In</legend>
