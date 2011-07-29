@@ -7,12 +7,15 @@ class User < ActiveRecord::Base
   attr_reader :password
   validate :password_must_be_present
   class<<self
-    def User.authenticate(name,password)
+    def authenticate(name,password)
       if user=find_by_name(name)
         if user.hashed_password==encrypt_password(password,user.salt)
           user
          end
       end
+    end
+    def encrypt_password(password,salt)
+    Digest::SHA2.hexdigest(password+"wibble"+salt)
     end
   end
   def ensure_an_admin_remains
@@ -35,8 +38,4 @@ class User < ActiveRecord::Base
      self.salt=self.object_id.to_s+rand.to_s
       end
     end 
-    def User.encrypt_password(password,salt)
-       Digest::SHA2.hexdigest(password+"wibble"+salt)
-    end
-
 
