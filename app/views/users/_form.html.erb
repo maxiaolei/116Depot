@@ -2,31 +2,32 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <%= t('errors.template.header', :count => @user.errors.size,
+    	      :model => t('activerecord.models.order'))%>:
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= raw msg %></li>
       <% end %>
       </ul>
     </div>
   <%end %>
 <fieldset>
-	<legend>Enter User Details</legend>
+	<legend><%= t('.legend')%></legend>
      <div>
-    <%= f.label :name %>
+    <%= f.label :name, t('.name') + ":" %>
     <%= f.text_field :name,:size=>40 %>
     </div>
   <div>
-    <%= f.label :password,'Password'%>
+    <%= f.label :password,t('.password') + ":"%>
     <%= f.text_field :password,:size=>40 %>
   </div>
     <div>
-    <%=f.label :password_confirmation,'Confirm'%>
+    <%=f.label :password_confirmation,t('.confirm') + ":"%>
     <%=f.password_field :password_confirmation,:size=>40 %>
    </div>
       <div>
-    <%=f.submit "add user"%>
+    <%=f.submit t('.add_user')%>
      </div> 
   </fieldset>
 <% end %>

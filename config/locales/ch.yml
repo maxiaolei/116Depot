@@ -1,0 +1,178 @@
+ch:
+#START:currency
+  number:
+    currency:
+      format:
+        unit:      "￥"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+#END:currency
+
+#START:layout
+  layouts:
+    application:
+      title:       "个人书架"
+      home:        "主页"
+      questions:   "问题"
+      news:        "新闻"
+      contact:     "联系我们"
+      orders:      "订单"
+      products:    "产品"
+      users:       "用户"
+      logout:      "退出"
+#END:layout
+
+#START:cart
+  carts:
+    cart:
+      title:       "您的购物车"
+      empty:       "清空购物车"
+      checkout:    "结算"
+      sure:        "确定清空？"
+#END:cart
+
+#START:main
+  store:
+    index:
+      title_html:  "您的书目"
+      add:         "加入购物车"
+#END:main
+
+#START:checkout
+  orders:
+    new:
+      legend:       "请输入您的详细信息"
+    form:
+      name:         "名字"
+      address_html: "地址"
+      email:        "电子邮箱"
+      pay_type:     "支付"
+      pay_prompt_html: "选择支付方式"
+      submit:       "提交订单"
+    index:
+      order_list_title:        "订单列表"
+      order_list_name:         "客户姓名"
+      order_list_address:      "客户地址" 
+      order_list_email:        "客户邮箱"
+      order_list_pay_type:     "付款方式"
+      order_show:              "显示"
+      order_edit:              "编辑"
+      order_destroy:           "删除"
+      order_destroy_sure:      "确认删除？"
+      order_new:               "新建订单"
+    show:
+      order_show_name:         "客户姓名"
+      order_show_address:      "客户地址"
+      order_show_email:        "客户邮箱"
+      order_show_pay_type:     "付款方式"
+      order_show_edit:         "编辑"
+      order_show_back:         "返回"
+    edit:
+      order_edit_title:        "编辑订单"
+      order_edit_show:         "显示"
+      order_edit_back:         "返回"
+#END:checkout
+
+#START:layout
+  products:
+    index:
+      product_list_title:      "产品列表"
+      product_list_show:       "显示"
+      product_list_edit:       "编辑"
+      product_list_destroy:    "删除"
+      product_list_sure:       "确认删除?"
+      product_list_new:        "添加产品"
+    show:
+      product_show_title:       "书名"
+      product_show_description: "书籍简介"
+      product_show_price:       "价格"
+      product_show_edit:        "编辑"
+      product_show_back:        "返回" 
+    form:
+      title:         "书名"
+      description:   "书籍简介"
+      imag_url:      "图像地址"
+      price:         "价格"
+      submit:        "添加产品"
+    new:
+      title: "添加产品"
+      back:  "返回"
+    edit:
+      title: "编辑产品"
+      show:  "显示"
+      back: "返回"
+#END:layout
+
+#START:activerecord
+  activerecord:
+    errors:
+      messages: 
+        inclusion:  "不存在于列表中"
+        blank:      "不能为空"
+  errors:
+    template:
+      body:         "下列域存在问题 "
+      header:
+        one:        "保存时出现一个错误"
+        other:      "保存时出现%{count}个错误"
+#START:activerecord
+
+#START:orders
+  users:
+    new:
+      title:        "请输入用户详细信息"
+      back:         "返回"
+    form:
+      legend:       "用户详细信息"
+      name:         "姓名"
+      password:     "密码"
+      confirm:      "密码确认"
+      add_user:     "添加"
+    index:
+      title:        "用户列表"
+      name:         "姓名"
+      show:         "显示"
+      edit:         "编辑"
+      destroy:      "删除"
+      sure:         "确认删除?"
+      new:          "添加用户"
+    show:
+      name:         "姓名"
+      edit:         "编辑"
+      back:         "返回"
+    edit:
+      title:        "编辑用户"
+      show:         "显示"
+      back:         "返回"
+#END:orders
+
+#START:cart
+  admin:
+    index:
+      welcome:       "欢迎"
+      its:           "现在时间是："
+      orders:        "现在已经有的订单数："
+#END:cart
+
+#START:sessions
+  sessions:
+    new:
+      legend:        "请登录"
+      name:          "用户名"
+      password:      "密  码"
+      login:         "登陆"
+#END:sessions
+
+#START:flash
+  thanks:          "谢谢您的订单!"
+  product_add:     "产品添加成功!"
+  product_update:  "产品更新成功!"
+  invalid_email:   "邮箱格式不正确!"
+  invalid_imag:    "图像格式必须是jpg,gif或者png"
+  alert:           "不正确的用户名/密码组合"
+  logout_notice:   "您已经退出登陆"
+  user_create:     "用户已成功添加"
+  user_update:     "用户已更改成功"
+#END:flash

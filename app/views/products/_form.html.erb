@@ -1,33 +1,34 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <%= t('errors.template.header', :count => @product.errors.size,
+    	      :model => t('activerecord.models.order'))%>:
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= raw msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, t('.title') + ":" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, t('.description') + ":" %><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
+    <%= f.label :image_url, t('.imag_url') + ":" %><br />
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
-    <b>$</b><%= f.text_field :price %>
+    <%= f.label :price, t('.price') + ":" %><br />
+    <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  t('.submit')%>
   </div>
 <% end %>

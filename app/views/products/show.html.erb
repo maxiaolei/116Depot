@@ -1,13 +1,14 @@
+<%if notice %>
 <p id="notice"><%= notice %></p>
-
+<% end %>
 <p>
-  <b>Title:</b>
+  <b><%= t('.product_show_title') +":"%></b>
   <%= @product.title %>
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @product.description %>
+  <b><%= t('.product_show_description') + ":"%></b>
+  <%= sanitize(@product.description) %>
 </p>
 
 
@@ -15,10 +16,10 @@
 	<img src="<%= @product.image_url %>" alt="<%=@product.title %>" />
 </p>
 <p>
-  <b>Price:$</b>
-  <%= @product.price %>
+  <b><%= t('.product_show_price') + ":" %></b>
+  <%= number_to_currency(@product.price) %>
 </p>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('.product_show_edit'), edit_product_path(@product) %> |
+<%= link_to t('.product_show_back'), products_path %>

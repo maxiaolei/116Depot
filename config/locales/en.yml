@@ -2,4 +2,180 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+#START:layout
+  layouts:
+    application:
+      title:      "Pragmatic Bookshelf"
+      home:       "Home"
+      questions:  "Questions"
+      news:       "News"
+      contact:    "Contact"
+      orders:     "Orders"
+      products:   "Products"
+      users:      "Users"
+      logout:     "Logout"
+#END:layout
+
+#START:main
+  store:
+    index:
+      title_html:  "Your Pragmatic Catalog"
+      add:         "Add to cart"
+#END:main
+
+#START:cart
+  carts:
+    cart:
+      title:       "Your cart"
+      empty:       "Empty Cart"
+      checkout:    "Check Out"
+      sure:        "Are you sure?"
+#END:cart
+
+#START:currency
+  number:
+    currency:
+      format:
+        unit:      "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+#END:currency
+
+#START:checkout
+  orders:
+    new:
+      legend:       "Please Enter Your Details"
+    form:
+      name:         "Name"
+      address_html: "Address"
+      email:        "E-mail"
+      pay_type:     "Pay With"
+      pay_prompt_html: "Select a payment method"
+      submit:       "Place Order"
+    index:
+      order_list_title:        "Listing Orders"
+      order_list_name:         "Name"
+      order_list_address:      "Address" 
+      order_list_email:        "Email"
+      order_list_pay_type:     "Pay Type"
+      order_show:              "Show"
+      order_edit:              "Edit"
+      order_destroy:           "Destroy"
+      order_destroy_sure:      "Are you sure?"
+      order_new:               "New Order"
+    show:
+      order_show_name:         "Name"
+      order_show_address:      "Address"
+      order_show_email:        "E-mail"
+      order_show_pay_type:     "Pay Type"
+      order_show_edit:         "Edit"
+      order_show_back:         "Back"
+    edit:
+      order_edit_title:        "Edit Order"
+      order_edit_show:         "Show"
+      order_edit_back:         "Back"
+#END:checkout
+
+#START:activerecord
+  activerecord:
+    errors:
+      messages: 
+        inclusion:  "is not included in the list"
+        blank:      "can't be blank"
+  errors:
+    template:
+      body:         "There are problems with the following fields: "
+      header:
+        one:        "1 error prohibited this order from being saved"
+        other:      "%{count} errors prohibited this order from being saved"
+#START:activerecord
+
+#START:layout
+  products:
+    index:
+      product_list_title:      "Listing products"
+      product_list_show:       "Show"
+      product_list_edit:       "Edit"
+      product_list_destroy:    "Destroy"
+      product_list_sure:       "Are you sure?"
+      product_list_new:        "New Product"
+    show:
+      product_show_title:       "Title"
+      product_show_description: "Description"
+      product_show_price:       "Price"
+      product_show_edit:        "Edit"
+      product_show_back:        "Back" 
+    form:
+      title:         "Title"
+      description:   "Description"
+      imag_url:      "Image_url"
+      price:         "Price"
+      submit:        "Create Product"
+    new:
+      title: "New Product"
+      back:  "Back"
+    edit:
+      title: "Editing product"
+      show:  "Show"
+      back:  "Back"
+#END:layout
+
+#START:orders
+  users:
+    new:
+      title:        "Enter User Details"
+      back:         "Back"
+    form:
+      legend:       "User Details"
+      name:         "Name"
+      password:     "Password"
+      confirm:      "Confirm"
+      add_user:     "Add User"
+    index:
+      title:        "Listing Users"
+      name:         "Name"
+      show:         "Show"
+      edit:         "Edit"
+      destroy:      "Destroy"
+      sure:         "Are you sure?"
+      new:          "New User"
+    show:
+      name:         "Name"
+      edit:         "Edit"
+      back:         "Back"
+    edit:
+      title:        "Editing user"
+      show:         "Show"
+      back:         "Back"
+#END:orders
+
+#START:admin
+  admin:
+    index:
+      welcome:       "Welcome"
+      its:           "It is "
+      orders:        "The orders we have: "
+#END:admin
+
+#START:sessions
+  sessions:
+    new:
+      legend:        "Please Log In"
+      name:          "Name:"
+      password:      "password"
+      login:         "Login"
+#END:sessions
+
+#START:flash
+  thanks:          "Thank you for your order!"
+  invalid_email:   "The email address is invalid!"
+  product_add:     "Product was successfully created."
+  product_update:  "Product was successfully updated."
+  ivalid_imag:     "must be a URL for GIF,JPG or PNG image."
+  alert:           "Invalid user/password combination"
+  logout_notice:   "Logout"
+  user_create:     "User was successfully created."
+  user_update:     "User was successfully updated."
+#END:flash

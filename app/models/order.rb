@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   validates :name, :address, :email, :pay_type, :presence => true
   validates :email, :format => {
     :with    => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
-    :message => "The email address is invalid!"
+    :message => I18n.t('.invalid_email')
   }
   validates :pay_type, :inclusion => PAYMENT_TYPES
   def add_line_items_from_cart(cart)
