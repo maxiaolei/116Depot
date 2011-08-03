@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.7-x86-mingw32)
     abstract (1.0.0)
     actionmailer (3.0.7)
       actionpack (= 3.0.7)
@@ -70,6 +71,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  RedCloth (>= 4.1.1)
   rails (= 3.0.7)
   sqlite3
   will_paginate (>= 3.0.pre)
