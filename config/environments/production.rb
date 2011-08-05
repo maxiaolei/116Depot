@@ -46,4 +46,15 @@ Depot::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    :address         => "smtp.gmail.com",
+    :port            => 587,
+    :domain          => "172.18.181.192:3000",
+    :authentication  => "plain",
+    :user_name       => "shenshaoweis@gmail.com",
+    :password        => "8805090712",
+    :enable_starttls => true
+  }
 end
