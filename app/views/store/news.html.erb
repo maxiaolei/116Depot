@@ -1,0 +1,9 @@
+<h4>好消息：</h4>
+<ul>
+	<li>新书上架了</li>
+	<%= link_to (image_tag(@product.image_url)), {:controller => 'products', :action => 'show', :id => @product.id} %>
+    <h3>Title: <%= link_to @product.title, {:controller => 'products', :action => 'show', :id => @product.id} %></h3> 
+    <span>Author: <%= @product.author%></span>
+    <%= sanitize(@product.description) %>
+</ul>
+

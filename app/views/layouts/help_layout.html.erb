@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Pragprog Books Online Store</title> 
+  <%= stylesheet_link_tag "help" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head> 
+<body id="store"> 
+  <div id="banner"> 
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div> 
+  <div id="columns"> 
+    <div id="side">
+ 
+      <p><a href="<%= store_url %>">Home</a><br /><p>  
+      <%= link_to "News", :controller => 'help', :action => :seenews %><br />
+      <%= link_to "ContactUs", :controller => 'help', :action => :contactus %><br />
+      <%= link_to "Language", :controller => 'help', :action => :language %><br />
+      <%= link_to "HowToSearch", :controller => 'help', :action => :howtosearch %><br />
+      <p>Customer</p>
+      <%= link_to "CustomerLogin", :controller => 'help',:action =>:customerlogin %><br />
+      <%= link_to "CustomerRegister", :controller => 'help',:action =>:customerregister %><br />
+      <%= link_to "CustomerLogout", :controller => 'help', :action => :customerlogout%><br />
+      <%= link_to "HowToBuy", :controller => 'help', :action => :howtobuy %><br />
+      <%= link_to "SendEmail", :controller => 'help', :action => :sendemail %><br />
+      <%= link_to "AddComment", :controller => 'help', :action => :addcomment %><br />
+      <p>Seller</p>   
+      <%= link_to "ProductManagement", :controller => 'help', :action => :productmanage %><br />
+      <%= link_to "OrderManagement", :controller => 'help', :action => :ordermanage %><br />
+    </div> 
+    <div id="main"> 
+      <%= yield %>
+    </div> 
+  </div> 
+</body> 
+</html> 
