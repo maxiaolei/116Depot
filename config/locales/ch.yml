@@ -86,12 +86,14 @@ ch:
       product_list_new:        "添加产品"
     show:
       product_show_title:       "书名"
+      product_show_author:      "作者"
       product_show_description: "书籍简介"
       product_show_price:       "价格"
       product_show_edit:        "编辑"
       product_show_back:        "返回" 
     form:
       title:         "书名"
+      author:        "作者"
       description:   "书籍简介"
       imag_url:      "图像地址"
       price:         "价格"

@@ -17,6 +17,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :author, t('.author') + ":" %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
     <%= f.label :description, t('.description') + ":" %><br />
     <%= f.text_area :description %>
   </div>

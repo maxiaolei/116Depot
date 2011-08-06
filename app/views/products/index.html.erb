@@ -3,7 +3,7 @@
 <br />
 <table>
 <% @products.each do |product| %>
-	<tr class="<%= cycle('list_line_odd','list_line_even') %>">
+	<tr class="<%= cycle('list_line_odd','list_line_even') %>" >
 	
 		<td>
 			<%= image_tag(product.image_url, :class => 'list_image') %>
@@ -11,7 +11,8 @@
 		
 		<td class="list_description">
 			<dl>
-				<dt><%= product.title %></dt>
+				<dt>Title: <%= product.title %></dt>
+				<dt style='font: 100% bold'>Author: <%= product.author %></dt>
 				<dd><%= truncate(strip_tags(product.description),
 					:length => 80) %></dd>
 			</dl>

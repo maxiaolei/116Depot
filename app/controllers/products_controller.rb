@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
+  skip_before_filter :authorize, :only => [:show, :add_comment, :search]
   def index
     @products = Product.all
 
@@ -14,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @cart = current_cart
 
     respond_to do |format|
       format.html # show.html.erb
@@ -88,6 +90,32 @@ class ProductsController < ApplicationController
       format.xml{ render :xml => @product }
     end
   end
+  
+  def add_comment
+    @product = Product.find(params[:id])
+    @product.comments << Comment.new(:product_id => params[:id], 
+                        :user_id => session[:user_id], :content => params[:user_comment])
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to(:action => 'show', :id => params[:id]) }
+        format.xml  { render :xml => @product, :status => :created, :location => @product }
+      end
+    end
+  end
+  
+  def search
+    args = params[:arg]
+    if args == 'title'
+      @products = Product.find(:all, :conditions => ["title like ?", "%" + params[:input] + "%"])
+    elsif args == 'author'
+      @products = Product.find(:all, :conditions => ["author like ?", "%" + params[:input] + "%"])
+    end
+    @cart = current_cart
+    respond_to do |format|
+      format.html
+    end
+  end
+  
 end
 
 

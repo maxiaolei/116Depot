@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
       return
     end
     
+    @cart = current_cart
     @order = Order.new
 
     respond_to do |format|

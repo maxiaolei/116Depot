@@ -103,12 +103,14 @@ en:
       product_list_new:        "New Product"
     show:
       product_show_title:       "Title"
+      product_show_author:      "Author"
       product_show_description: "Description"
       product_show_price:       "Price"
       product_show_edit:        "Edit"
       product_show_back:        "Back" 
     form:
       title:         "Title"
+      author:        "Author"
       description:   "Description"
       imag_url:      "Image_url"
       price:         "Price"

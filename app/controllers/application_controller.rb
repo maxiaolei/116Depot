@@ -12,10 +12,15 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = cart.id
       cart
     end
+    
    protected
      def authorize
         unless User.find_by_id(session[:user_id])
-         redirect_to login_url,:notice=>"Please log in"
+          redirect_to login_url,:notice=>"Please log in"
+        else
+          if session[:user_type] == 2
+            redirect_to store_url, :notice => "You are limited to access it."
+          end
         end
      end
      

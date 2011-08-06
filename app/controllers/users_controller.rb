@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
   # GET /users
   # GET /users.xml
   def index
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(users_url, :notice => I18n.t('.user_create')) }
+        format.html { session[:user_id] = @user.id,session[:user_type]=2,session[:user_name]=@user.name, redirect_to(store_url)}
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -71,8 +72,8 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     begin
-    @user.destroy
-    flash[:notice]="User #{@user.name}deleted"
+      @user.destroy
+      flash[:notice]="User #{@user.name}deleted"
     rescue Exception=>e
       flash[:notice]=e.message
     end

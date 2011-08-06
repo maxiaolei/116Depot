@@ -5,7 +5,7 @@
 <table>
   <tr>
     <th><%= t('.name')%></th>
-    <th></th>
+    <th>Type</th>
     <th></th>
     <th></th>
   </tr>
@@ -13,6 +13,7 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
+    <td><%= user.usertype%></td>
     <td><%= link_to t('.show'), user %></td>
     <td><%= link_to t('.edit'), edit_user_path(user) %></td>
     <td><%= link_to t('.destroy'), user, :confirm => t('.sure'), :method => :delete %></td>

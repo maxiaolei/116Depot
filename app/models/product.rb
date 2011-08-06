@@ -6,9 +6,12 @@ validates :image_url, :format =>{
 	:with      => %r{\.(gif|jpg|png)$}i,
 	:message   => I18n.t('.invalid_imag')
 }
+
 default_scope :order => 'title'
+
 has_many :line_items
 has_many :orders, :through => :line_items
+has_many :comments
 
 before_destroy :ensure_not_referenced_by_any_line_item
 

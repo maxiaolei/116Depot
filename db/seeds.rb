@@ -1,6 +1,7 @@
 # encoding: utf-8
 Product.delete_all
 Product.create(:title => 'Web Design for Developers',
+  :author => 'author1',
   :description => 
     %{<p>
         <em>Web Design for Developers</em> will show you how to make your
@@ -15,6 +16,7 @@ Product.create(:title => 'Web Design for Developers',
   :price => 42.95)
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
+:author => 'author2',
   :description =>
     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -26,6 +28,7 @@ Product.create(:title => 'Programming Ruby 1.9',
 # . . .
 
 Product.create(:title => 'Rails Test Prescriptions',
+:author => 'author3',
   :description => 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
