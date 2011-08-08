@@ -41,10 +41,12 @@
          <%=link_to t('.products'), products_path %><br/>
          <%=link_to t('.users'), users_path%><br/>
          <%=link_to 'Comments', comments_path%><br/>
+         <%=link_to 'Book in need',book_in_needs_path%><br/>
          <br/>
          <% else %>
-         <br /><br /><br />
-         <span>Hello,</span> <%= session[:user_name] %>
+         <br/>
+         <%= link_to 'post book requirement', new_book_in_need_path %><br/>
+         <br/>
          <% end %>
          <%=button_to t('.logout'), logout_path,:method=>:delete %>
       <%end%>

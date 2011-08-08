@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :book_in_needs
+
     get 'admin'=>'admin#index'
   
   controller :sessions do
