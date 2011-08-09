@@ -1,0 +1,2 @@
+module BookInNeedsHelper
+end

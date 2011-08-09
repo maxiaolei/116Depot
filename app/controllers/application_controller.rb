@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
           redirect_to login_url,:notice=>"Please log in"
         else
           if session[:user_type] == 2
+<<<<<<< HEAD
             redirect_to store_url
+=======
+            redirect_to store_url, :notice => "You are limited to access it."
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
           end
         end
      end

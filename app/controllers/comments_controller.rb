@@ -3,8 +3,12 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
+<<<<<<< HEAD
     #@comments = Comment.all
     @comments = Comment.paginate :page => params[:page], :order => "id DESC", :per_page => 10
+=======
+    @comments = Comment.all
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 
     respond_to do |format|
       format.html # index.html.erb

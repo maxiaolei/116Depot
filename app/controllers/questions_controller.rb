@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+<<<<<<< HEAD
   skip_before_filter :authorize, :only => [:raise, :receive]
   # GET /questions
   # GET /questions.xml
@@ -8,6 +9,16 @@ class QuestionsController < ApplicationController
     
     respond_to do |format|
       format.html 
+=======
+  #skip_before_filter :authorize
+  # GET /questions
+  # GET /questions.xml
+  def index
+    @questions = Question.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
       format.xml  { render :xml => @questions }
     end
   end
@@ -82,6 +93,7 @@ class QuestionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+<<<<<<< HEAD
   
   def raise
     #@question = Question.find(:all)
@@ -97,4 +109,6 @@ class QuestionsController < ApplicationController
       end
     end
   end
+=======
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 end

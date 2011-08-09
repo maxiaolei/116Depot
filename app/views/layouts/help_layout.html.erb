@@ -14,6 +14,7 @@
   <div id="columns"> 
     <div id="side">
  
+<<<<<<< HEAD
       <p><%= link_to "Home", store_url %></p>
       &nbsp;<%= link_to "News", :controller => 'help', :action => :seenews %><br />
       &nbsp;<%= link_to "ContactUs", :controller => 'help', :action => :contactus %><br />
@@ -29,6 +30,23 @@
       <p>Seller</p>   
       &nbsp;<%= link_to "ProductManagement", :controller => 'help', :action => :productmanage %><br />
       &nbsp;<%= link_to "OrderManagement", :controller => 'help', :action => :ordermanage %><br />
+=======
+      <p><a href="<%= store_url %>">Home</a><br /><p>  
+      <%= link_to "News", :controller => 'help', :action => :seenews %><br />
+      <%= link_to "ContactUs", :controller => 'help', :action => :contactus %><br />
+      <%= link_to "Language", :controller => 'help', :action => :language %><br />
+      <%= link_to "HowToSearch", :controller => 'help', :action => :howtosearch %><br />
+      <p>Customer</p>
+      <%= link_to "CustomerLogin", :controller => 'help',:action =>:customerlogin %><br />
+      <%= link_to "CustomerRegister", :controller => 'help',:action =>:customerregister %><br />
+      <%= link_to "CustomerLogout", :controller => 'help', :action => :customerlogout%><br />
+      <%= link_to "HowToBuy", :controller => 'help', :action => :howtobuy %><br />
+      <%= link_to "SendEmail", :controller => 'help', :action => :sendemail %><br />
+      <%= link_to "AddComment", :controller => 'help', :action => :addcomment %><br />
+      <p>Seller</p>   
+      <%= link_to "ProductManagement", :controller => 'help', :action => :productmanage %><br />
+      <%= link_to "OrderManagement", :controller => 'help', :action => :ordermanage %><br />
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
     </div> 
     <div id="main"> 
       <%= yield %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @book_in_need.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @book_in_need.author %>
+</p>
+
+<p>
+  <b>Press:</b>
+  <%= @book_in_need.press %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @book_in_need.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @book_in_need.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_in_need_path(@book_in_need) %> |
+

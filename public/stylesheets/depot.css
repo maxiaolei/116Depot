@@ -17,7 +17,7 @@
 }
  
 /* Styles for products/index */
- 
+
 #product_list table {
         border-collapse: collapse;
 }
@@ -61,6 +61,52 @@
 }
  
 #product_list .list_line_odd {
+  background:   #f8b0f8;
+}
+/* Styles for book_in_needs/index */
+#book_in_need_list table {
+        border-collapse: collapse;
+}
+ 
+#book_in_need_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#book_in_need_list .list_image {
+  width:        100px;
+  height:       130px;
+}
+ 
+#book_in_need_list .list_description {
+  width:        60%;
+}
+ 
+#book_in_need_list .list_description dl {
+        margin: 0;
+}
+ 
+#book_in_need_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+ 
+#book_in_need_list .list_description dd {
+        margin: 0;
+}
+ 
+#book_in_need_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+ 
+#book_in_need_list .list_line_even {
+  background:   #e0f8f8;
+}
+ 
+#book_in_need_list .list_line_odd {
   background:   #f8b0f8;
 }
  
@@ -236,14 +282,24 @@
 }
 
 .comment_odd{
+<<<<<<< HEAD
 	background: #e0f8f8;
 	border: 1px;
+=======
+	background: white;
+	border: dotted 1px;
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 	margin-bottom: 5px;
 }
 
 .comment_even{
+<<<<<<< HEAD
 	background: #7FFFD4;
 	border: 1px;
+=======
+	background: yellow;
+	border: dotted 1px;
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 	margin-bottom: 5px;
 }
 
@@ -254,6 +310,14 @@
   margin-bottom: 5px;
   float: left;
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 
 
 
