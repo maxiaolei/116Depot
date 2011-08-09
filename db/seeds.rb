@@ -12,7 +12,8 @@ Product.create(:title => 'Web Design for Developers',
         and work through a web site redesign, taking a new design from concept
         all the way to implementation.
       </p>},
-  :image_url =>   '/images/wd4d.jpg',    
+  :image_url =>   '/images/wd4d.jpg',  
+  :pdf => '/pdfs/1.pdf',  
   :price => 42.95)
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
@@ -24,6 +25,7 @@ Product.create(:title => 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   :image_url => '/images/ruby.jpg',
+  :pdf => '/pdfs/2.pdf',  
   :price => 49.50)
 # . . .
 
