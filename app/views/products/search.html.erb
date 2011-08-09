@@ -1,0 +1,27 @@
+<div align='right'>
+<% form_tag ({:controller => 'products', :action => :search}) do %>
+<span style="font: 120% bold">Key Word:</span>
+<%=text_field_tag :input, nil, :size => 20%>
+<%=select_tag(:arg, options_for_select(%w{title author}))%>
+<%=submit_tag 'Search'%>
+<% end %> 
+</div>
+
+
+<h1>Your Pragmatic Catalog</h1> 
+ 
+<% @products.each do |product| %>
+  <div class="entry"> 
+    <%= link_to (image_tag(product.image_url)), {:controller => 'products', :action => 'show', :id => product.id} %>
+    <h3><%= link_to product.title, {:controller => 'products', :action => 'show', :id => product.id} %></h3> 
+    <span>Author: <%= product.author%></span>
+    <%= sanitize(product.description) %>
+    <div class="price_line"> 
+      <span class="price"><%= number_to_currency(product.price) %></span> 
+      <%= button_to "Add to Cart", line_items_path(:product_id => product),
+        :remote => true %>
+    </div> 
+  </div> 
+<% end %>
+
+<p><%= will_paginate @products %></p>

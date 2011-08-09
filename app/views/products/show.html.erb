@@ -7,6 +7,11 @@
 </p>
 
 <p>
+  <b><%= t('.product_show_author') +":"%></b>
+  <%= @product.author %>
+</p>
+
+<p>
   <b><%= t('.product_show_description') + ":"%></b>
   <%= sanitize(@product.description) %>
 </p>
@@ -18,8 +23,36 @@
 <p>
   <b><%= t('.product_show_price') + ":" %></b>
   <%= number_to_currency(@product.price) %>
+  <%= button_to 'Add To Cart', line_items_path(:product_id => @product.id),
+        :remote => true %>
 </p>
 
-
+<% if session[:user_type] == 1%>
 <%= link_to t('.product_show_edit'), edit_product_path(@product) %> |
 <%= link_to t('.product_show_back'), products_path %>
+<% end %>
+
+<br /><br />
+<% unless @product.comments.blank? %>
+<h3>Comments About The Product:</h3>
+<% puts @product.comments %>
+  <% @product.comments.each do  |comment|%>
+  <div class="<%= cycle('comment_odd','comment_even') %>">
+    <span style='font: 120% bold'><%= comment.user.name %></span>:
+    <p>
+    	<%= comment.content %>
+    </p>
+   </div>
+  <% end %>
+<% end %>
+
+<% if session[:user_id]%>
+<%form_tag ({:action => :add_comment, :id => @product.id }) do%>
+  <%= text_area_tag (:user_comment,nil, :cols => 80, :rows => 3)%><br/>
+  <%= submit_tag 'Add Comment'%>
+<% end %>
+<% end %>
+
+
+
+

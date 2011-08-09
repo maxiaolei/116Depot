@@ -10,9 +10,9 @@ en:
       questions:  "Questions"
       news:       "News"
       contact:    "Contact"
-      orders:     "Orders"
-      products:   "Products"
-      users:      "Users"
+      orders:     "OrdersManagement"
+      products:   "ProductsManagement"
+      users:      "UsersManagement"
       logout:     "Logout"
 #END:layout
 
@@ -59,7 +59,7 @@ en:
       order_list_name:         "Name"
       order_list_address:      "Address" 
       order_list_email:        "Email"
-      order_list_pay_type:     "Pay Type"
+      order_list_pay_type:     "Pay_Type"
       order_show:              "Show"
       order_edit:              "Edit"
       order_destroy:           "Destroy"
@@ -103,12 +103,14 @@ en:
       product_list_new:        "New Product"
     show:
       product_show_title:       "Title"
+      product_show_author:      "Author"
       product_show_description: "Description"
       product_show_price:       "Price"
       product_show_edit:        "Edit"
       product_show_back:        "Back" 
     form:
       title:         "Title"
+      author:        "Author"
       description:   "Description"
       imag_url:      "Image_url"
       price:         "Price"

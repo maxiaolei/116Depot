@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_filter :authorize,:only => [:new,:create]
+  skip_before_filter :authorize,:only => [:new,:create,:show, :show_by_user_id]
   # GET /orders
   # GET /orders.xml
   def index
@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
       return
     end
     
+    @cart = current_cart
     @order = Order.new
 
     respond_to do |format|
@@ -47,8 +48,14 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.xml
   def create
-    @order = Order.new(params[:order])
-    @order.add_line_items_from_cart(current_cart)
+    @order = Order.new(:user_id => session[:user_id], 
+                       :name => params[:order][:name],
+                       :address => params[:order][:address],
+                       :email => params[:order][:email],
+                       :pay_type => params[:order][:pay_type])
+     
+    @order.price = @order.add_line_items_from_cart(current_cart)                  
+    #@order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
       if @order.save
@@ -90,5 +97,12 @@ class OrdersController < ApplicationController
       format.html { redirect_to(orders_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def show_by_user_id
+    user_id = session[:user_id]
+    @orders = Order.paginate :page => params[:page], :per_page => 10,
+                             :conditions => ["user_id = ?", user_id],
+                             :order => "id DESC"
   end
 end

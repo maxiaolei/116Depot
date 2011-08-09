@@ -1,20 +1,15 @@
 <div class="cart_title" style="font: 200% bold;"><%= t('.title')%></div> 
 <table> 
-<!-- START_HIGHLIGHT --> 
   <%= render(cart.line_items) %>
-<!-- END_HIGHLIGHT --> 
  
   <tr class="total_line"> 
     <td colspan="2">Total</td> 
-<!-- START_HIGHLIGHT --> 
     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td> 
-<!-- END_HIGHLIGHT --> 
   </tr> 
  
 </table> 
  
-<!-- START_HIGHLIGHT --> 
-<%= button_to t('.checkout'), new_order_url, :method=>:get %>
 <%= button_to t('.empty'), cart, :method => :delete,
-#<!-- END_HIGHLIGHT --> 
     :confirm => t('.sure') %>
+    
+<%= button_to t('.checkout'), get_url, :method=>:get %>

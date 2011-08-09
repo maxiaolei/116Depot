@@ -1,0 +1,22 @@
+<%if notice%>
+<p id="notice"><%= notice %></p>
+<%end%>
+
+<p>
+  <b>User:</b>
+  <%= @question.user_id %>
+</p>
+
+<p>
+  <b>Problem:</b>
+  <%= @question.problem %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @question.answer %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

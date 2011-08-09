@@ -2,4 +2,6 @@
 
 <%= render 'form' %>
 
+<% if session[:user_id]%>
 <%= link_to t('.back'), users_path %>
+<% end %>

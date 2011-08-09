@@ -10,9 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729010139) do
+ActiveRecord::Schema.define(:version => 20110809011502) do
 
   create_table "carts", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +41,9 @@ ActiveRecord::Schema.define(:version => 20110729010139) do
     t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "state",      :default => "未发货"
+    t.float    "price",      :default => 0.0
   end
 
   create_table "products", :force => true do |t|
@@ -40,6 +51,15 @@ ActiveRecord::Schema.define(:version => 20110729010139) do
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "author"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "problem"
+    t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20110729010139) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "usertype",        :default => 2
   end
 
 end

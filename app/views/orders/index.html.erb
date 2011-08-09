@@ -2,21 +2,20 @@
 
 <table>
   <tr>
+  	<th>ID</th>
     <th><%= t('.order_list_name')%></th>
-    <th><%= t('.order_list_address')%></th>
-    <th><%= t('.order_list_email')%></th>
     <th><%= t('.order_list_pay_type')%></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Total_Price</th>
+    <th>Order_State</th>
   </tr>
 
 <% @orders.each do |order| %>
   <tr>
+  	<td><%= order.id%></td>
     <td><%= order.name %></td>
-    <td><%= order.address %></td>
-    <td><%= order.email %></td>
     <td><%= order.pay_type %></td>
+    <td><%= number_to_currency(order.price) %></td>
+    <td><%= order.state%></td>
     <td><%= link_to t('.order_show'), order %></td>
     <td><%= link_to t('.order_edit'), edit_order_path(order) %></td>
     <td><%= link_to t('.order_destroy'), order, :confirm => t('.order_destroy_sure'), :method => :delete %></td>

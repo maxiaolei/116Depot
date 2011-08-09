@@ -1,0 +1,18 @@
+<h4>常见问题：</h4>
+<ul>
+	<% @question.each do |question| %>
+	<li>
+		<p><%= question.problem %></p>
+		<%unless question.answer.blank? %>
+		  --<%= question.answer %>
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<p><%= will_paginate @question%>
+<% if session[:user_id]%>
+<% form_tag ({:controller => 'questions', :action => :receive}) do%>
+  <%= text_area_tag (:ques, nil, :cols => 50, :rows => 5)%><br />
+  <%= submit_tag "Post Question"%>
+<%end%>
+<% end %>

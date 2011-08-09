@@ -99,6 +99,7 @@
   padding-bottom: 1em;
   width: 16em;
   background: #141;
+  color: #bfb;
 }
  
 #side a {
@@ -230,16 +231,29 @@
 	padding-top: 0.2em;
 }
 
+.add_comment{
+	float: right;
+}
 
+.comment_odd{
+	background: #e0f8f8;
+	border: 1px;
+	margin-bottom: 5px;
+}
 
+.comment_even{
+	background: #7FFFD4;
+	border: 1px;
+	margin-bottom: 5px;
+}
 
-
-
-
-
-
-
-
+#store ul img {
+  width: 80px;
+  margin-top: 16px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
 
 
 

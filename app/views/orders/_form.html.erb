@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :address, t('.address_html')+":" %><br />
-    <%= f.text_area :address %>
+    <%= f.text_area :address ,:cols => 50, :rows => 3%>
   </div>
   <div class="field">
     <%= f.label :email, t('.email')+":"%><br />
@@ -28,6 +28,12 @@
    <%= f.select :pay_type, Order::PAYMENT_TYPES, 	
         :prompt => t('.pay_prompt_html') %>
   </div>
+  <% if session[:user_id] == 1%>
+  <div class="field">
+    <%= f.label :state %><br />
+   <%= f.select :state, options_for_select(%w{未发货 已发货 交易成功}) %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit t('.submit')%>
   </div>

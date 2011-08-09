@@ -1,0 +1,24 @@
+<h1>Your Orders</h1>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+    <th>Pay_Type</th>
+    <th>Total_Price</th>
+    <th>Order_State</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+  	<td><%= link_to order.id, :controller => 'orders', :action => :show, :id => order.id %></td>
+    <td><%= order.name %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= number_to_currency(order.price) %></td>
+    <td><%= order.state%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p><%= will_paginate @orders %> </p>
