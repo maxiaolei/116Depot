@@ -8,10 +8,7 @@ class User < ActiveRecord::Base
   validate :password_must_be_present
   
   has_many :comments
-<<<<<<< HEAD
   has_many :orders
-=======
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
   
   class<<self
     def authenticate(name,password)
