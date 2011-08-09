@@ -15,8 +15,13 @@
   <b><%= t('.product_show_description') + ":"%></b>
   <%= sanitize(@product.description) %>
 </p>
-
-
+<p>
+<% if @product.pdf == 'lack' %>
+   <b>Try Reading: lack</b>
+<% else %>
+   <%= link_to t('.Try Reading'),@product.pdf %></br>
+<% end %>
+</p>
 <p>
 	<img src="<%= @product.image_url %>" alt="<%=@product.title %>" />
 </p>

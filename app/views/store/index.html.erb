@@ -17,7 +17,12 @@
   <div class="entry"> 
     <%= link_to (image_tag(product.image_url)), {:controller => 'products', :action => 'show', :id => product.id} %>
     <h3>Title: <%= link_to product.title, {:controller => 'products', :action => 'show', :id => product.id} %></h3> 
-    <span>Author: <%= product.author%></span>
+    <span>Author: <%= product.author%></span></br>
+<% if product.pdf == 'lack' %>
+   <span>Try Reading: lack</span>
+<% else %>
+   <%= link_to t('.Try Reading'),product.pdf %></br>
+<% end %>
     <%= sanitize(product.description) %>
     <div class="price_line"> 
       <span class="price"><%= number_to_currency(product.price) %></span> 
