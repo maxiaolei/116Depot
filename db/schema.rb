@@ -10,6 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110809011502) do
 
   create_table "book_in_needs", :force => true do |t|
@@ -21,6 +22,10 @@ ActiveRecord::Schema.define(:version => 20110809011502) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+
+ActiveRecord::Schema.define(:version => 20110809011502) do
+>>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -64,7 +69,10 @@ ActiveRecord::Schema.define(:version => 20110809011502) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "author"
+<<<<<<< HEAD
     t.string   "pdf",         :default => "lack"
+=======
+>>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
   end
 
   create_table "questions", :force => true do |t|

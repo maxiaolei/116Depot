@@ -22,11 +22,19 @@ Depot::Application.routes.draw do
       get :who_bought, :on => :member
     end
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
     controller :orders do
       get :show_by_user_id
       post :ship
     end
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
     controller :products do
       post :add_comment
       post :search
@@ -57,7 +65,11 @@ Depot::Application.routes.draw do
       get :raise
       post :receive
     end
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
