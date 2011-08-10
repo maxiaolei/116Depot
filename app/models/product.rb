@@ -2,6 +2,11 @@ class Product < ActiveRecord::Base
 validates :title, :description, :image_url, :presence => true
 validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
 validates :title, :uniqueness => true
+validates_length_of :description,:minimum=>5,:message=>"is too short"
+validates_length_of :description,:maximum=>300,:message=>"is too long"
+validates_length_of :title,:maximum=>24,:message=>" is too long"
+validates_length_of :price,:maximum=>4,:message=>" is too expensive"
+validates_length_of :author,:maximum=>20,:message=>" is too long"
 validates :image_url, :format =>{
 	:with      => %r{\.(gif|jpg|png)$}i,
 	:message   => I18n.t('.invalid_imag')
