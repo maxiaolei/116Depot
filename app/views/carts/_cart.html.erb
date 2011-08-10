@@ -9,7 +9,9 @@
  
 </table> 
  
-<%= button_to t('.empty'), cart, :method => :delete,
-    :confirm => t('.sure') %>
+<!--<%= button_to 'Update And Checkout', :controller => 'carts', 
+                                     :action => :show, 
+                                     :id => cart.id, 
+                                     :method => :get %>-->
+<%= button_to 'Update And Checkout', cart, :method => :get %>
     
-<%= button_to t('.checkout'), get_url, :method=>:get %>

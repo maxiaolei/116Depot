@@ -40,6 +40,10 @@
 
 
 <% if session[:user_type]==1%>
-<%= link_to t(".order_show_edit"), edit_order_path(@order) %> |
-<%= link_to t('.order_show_back'), orders_path %>
+  <% if @order.state == '未发货'%>
+    <%= button_to 'Ship', :controller => 'orders', :action => :ship, :id => @order.id %>
+  <% end %>
+  <br /><br />
+  <%= link_to t(".order_show_edit"), edit_order_path(@order) %> |
+  <%= link_to t('.order_show_back'), orders_path %>
 <% end %>

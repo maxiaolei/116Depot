@@ -19,6 +19,11 @@
     <td><%= link_to t('.order_show'), order %></td>
     <td><%= link_to t('.order_edit'), edit_order_path(order) %></td>
     <td><%= link_to t('.order_destroy'), order, :confirm => t('.order_destroy_sure'), :method => :delete %></td>
+    <td>
+    <% if order.state == '未发货'%>
+      <%= button_to 'Ship', :controller => 'orders', :action => :ship, :id => order.id%>
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>

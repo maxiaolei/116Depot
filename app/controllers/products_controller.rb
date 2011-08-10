@@ -106,17 +106,11 @@ class ProductsController < ApplicationController
   def search
     args = params[:arg]
     if args == 'title'
-<<<<<<< HEAD
       #@products = Product.find(:all, :conditions => ["title like ?", "%" + params[:input] + "%"])
       @products = Product.paginate :page => params[:page], :per_page => 3, :conditions => ["title like ?", "%" + params[:input] + "%"]
     elsif args == 'author'
       @products = Product.paginate :page => params[:page], :per_page => 3, :conditions => ["author like ?", "%" + params[:input] + "%"]
       #@products = Product.find(:all, :conditions => ["author like ?", "%" + params[:input] + "%"])
-=======
-      @products = Product.find(:all, :conditions => ["title like ?", "%" + params[:input] + "%"])
-    elsif args == 'author'
-      @products = Product.find(:all, :conditions => ["author like ?", "%" + params[:input] + "%"])
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
     end
     @cart = current_cart
     respond_to do |format|
