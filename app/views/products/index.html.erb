@@ -13,20 +13,11 @@
 			<dl>
 				<dt>Title: <%= product.title %></dt>
 				<dt style='font: 100% bold'>Author: <%= product.author %></dt>
-<<<<<<< HEAD
         <% if product.pdf == 'lack' %>
             <dt>Try Reading: lack</dt>
         <% else %>
             <%= link_to t('.Try Reading'),product.pdf %></br>
         <% end %>
-=======
-
-<% if product.pdf == 'lack' %>
-   <dt>Try Reading: lack</dt>
-<% else %>
-   <%= link_to t('.Try Reading'),product.pdf %></br>
-<% end %>
->>>>>>> 7d1707185f745003a9cd3d954b4f26030dab8413
 				<dd><%= truncate(strip_tags(product.description),
 					:length => 80) %></dd>
 			</dl>
