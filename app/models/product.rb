@@ -7,6 +7,8 @@ validates :image_url, :format =>{
 	:message   => I18n.t('.invalid_imag')
 }
 
+CATEGORY_TYPES = ["Software", "Hardware", "Literature", "Philothephy"]
+
 default_scope :order => 'title'
 
 has_many :line_items
