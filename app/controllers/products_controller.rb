@@ -94,7 +94,8 @@ class ProductsController < ApplicationController
   def add_comment
     @product = Product.find(params[:id])
     @product.comments << Comment.new(:product_id => params[:id], 
-                        :user_id => session[:user_id], :content => params[:user_comment])
+                                     :user_id => session[:user_id], 
+                                     :content => params[:user_comment])
     respond_to do |format|
       if @product.save
         format.html { redirect_to(:action => 'show', :id => params[:id]) }

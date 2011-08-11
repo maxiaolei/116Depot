@@ -100,6 +100,7 @@ class OrdersController < ApplicationController
   end
   
   def show_by_user_id
+    @cart = current_cart
     user_id = session[:user_id]
     @orders = Order.paginate :page => params[:page], :per_page => 10,
                              :conditions => ["user_id = ?", user_id],

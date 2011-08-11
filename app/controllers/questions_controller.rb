@@ -86,6 +86,7 @@ class QuestionsController < ApplicationController
   def raise
     #@question = Question.find(:all)
     @question = Question.paginate :page => params[:page], :order => "id DESC", :per_page => 10
+    @cart = current_cart
   end
   
   def receive
