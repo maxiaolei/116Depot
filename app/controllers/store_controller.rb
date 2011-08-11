@@ -15,11 +15,7 @@ class StoreController < ApplicationController
   end
   
   def news
-<<<<<<< HEAD
     #@products = Product.find(:all, :order => "id DESC", :limit => 2)
     @products = Product.find_by_sql("select * from products order by id DESC limit 2")
-=======
-    @product = Product.find(1)
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
   end
 end

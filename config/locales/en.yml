@@ -10,9 +10,9 @@ en:
       questions:  "Questions"
       news:       "News"
       contact:    "Contact"
-      orders:     "OrdersManagement"
-      products:   "ProductsManagement"
-      users:      "UsersManagement"
+      orders:     "Orders"
+      products:   "Products"
+      users:      "Users"
       logout:     "Logout"
 #END:layout
 

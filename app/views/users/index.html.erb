@@ -4,16 +4,14 @@
 <% end %>
 <table>
   <tr>
-    <th><%= t('.name')%></th>
-    <th>Type</th>
-    <th></th>
-    <th></th>
+    <th width="20%" align="center"><%= t('.name')%></th>
+    <th width="20%" align="center">Type</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
-    <td><%= user.usertype%></td>
+    <td align="center"><%= user.name %></td>
+    <td align="center"><%= user.usertype%></td>
     <td><%= link_to t('.show'), user %></td>
     <td><%= link_to t('.edit'), edit_user_path(user) %></td>
     <td><%= link_to t('.destroy'), user, :confirm => t('.sure'), :method => :delete %></td>

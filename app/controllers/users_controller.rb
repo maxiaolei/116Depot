@@ -43,7 +43,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { session[:user_id] = @user.id,session[:user_type]=2,session[:user_name]=@user.name, redirect_to(store_url)}
+        session[:user_id] = @user.id
+        session[:user_type]=2 
+        session[:user_name]=@user.name
+        format.html { redirect_to(store_url)}
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -74,7 +77,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     begin
       @user.destroy
-      flash[:notice]="User #{@user.name}deleted"
+      flash[:notice]="User #{@user.name} deleted"
     rescue Exception=>e
       flash[:notice]=e.message
     end

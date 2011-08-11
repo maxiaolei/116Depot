@@ -129,12 +129,14 @@
  
 #columns {
   background: #141;
+  min-height: 50em;
 }
  
 #main {
   margin-left: 17em;
   padding-top: 4ex;
   padding-left: 2em;
+  min-height: 50em;
   background: white;
 }
  
@@ -144,6 +146,7 @@
   padding-left: 1em;
   padding-bottom: 1em;
   width: 16em;
+  height: 300%;
   background: #141;
   color: #bfb;
 }
@@ -282,24 +285,14 @@
 }
 
 .comment_odd{
-<<<<<<< HEAD
 	background: #e0f8f8;
 	border: 1px;
-=======
-	background: white;
-	border: dotted 1px;
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 	margin-bottom: 5px;
 }
 
 .comment_even{
-<<<<<<< HEAD
 	background: #7FFFD4;
 	border: 1px;
-=======
-	background: yellow;
-	border: dotted 1px;
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 	margin-bottom: 5px;
 }
 
@@ -310,14 +303,12 @@
   margin-bottom: 5px;
   float: left;
 }
-<<<<<<< HEAD
-=======
 
 
 
 
 
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
+
 
 
 

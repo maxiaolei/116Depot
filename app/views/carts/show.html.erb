@@ -1,25 +1,51 @@
-<!-- START_HIGHLIGHT --> 
-<%= render @cart %>
-<!-- END_HIGHLIGHT --> 
-<div class="cart_title">Your Pragmatic Cart</title>
-<ul>
-	<table>
-		<% for item in @cart.line_items %>
-		<tr>
-		<td><%= item.quantity %>&times;</td> 
-		<td><%= item.product.title %></td>
-		<td class="item_price"><%= number_to_currency(item.total_price) %></td>
-		</tr>
-		<% end %>
-		<tr class="total_line">
-			<td colspan="2">Total</td>
-			<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-		</tr>
-	</table>
-	
-</ul>
-
-<%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+<div class="cart_title"><h4>Your Cart:</h4></title>
+<table>
+	<tr>
+	  <th width='5%'></th>
+	  <th align='left' width='15%'>Title</th>
+	  <th width='10%' align='center'>Quantity</th>
+	  <th width='10%' align='right'>Unit_Price</th>
+	  <th width='15%' align='center'>Operation</th>
+	</tr>
+	<% for item in @cart.line_items %>
+	<tr>
+	 <td align='right'>
+	 	<%=link_to image_tag(item.product.image_url, :size =>"30x40"), 
+	 	           :controller => 'products', :action => :show, :id => item.product.id %></td>
+	 <td align='left'>
+	 	<%= link_to item.product.title, :controller => 'products', 
+	 	            :action => :show, :id => item.product.id %></td>
+	 <td align='center'>
+	 <%form_tag (:action => :set_quantity, :id => item.id) do %>
+	   <%= text_field_tag (:qty, item.quantity, :size => 1) %>
+	   <%= submit_tag "Update" %>
+	 <% end %>
+	 </td>
+	 <td class="item_price" align='left'><%= number_to_currency(item.product.price) %></td>
+	 <td align='center'><%= link_to 'Clear', :controller => 'carts', 
+	                                         :action => :clear, 
+	                                         :id => item.id %>
+	 </td>
+	</tr>
+	<% end %>
+	<tr class="total_line">
+	  <td colspan="4" align='right'>Total Price:</td>
+	  <td class="total_cell" align='center' id="cart_total_price">
+	  	<%= number_to_currency(@cart.total_price) %>
+	  </td>
+	</tr>
+	<tr>
+	  <td colspan="4" align='right'>
+	  	<%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+	  </td>
+	  <td align="center">
+	  	<%= button_to 'Check Out', get_url, :method=>:get %>
+	  </td>
+	</tr>
+</table>
+<%= link_to "Continue Shopping", :controller => "store", :action => :index%>
+<br /><br />
+<% if session[:user_type] == 1 %>
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %> |
-<%= link_to 'Home', store_path %>
+<%= link_to 'Back', carts_path %>
+<% end %>

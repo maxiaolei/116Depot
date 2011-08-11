@@ -1,24 +1,27 @@
 <h1>Your Orders</h1>
 
+<% if @orders.blank? %>
+ <h2 style="font-family:serif">You have no orders at present, hurry to create one.</h2>
+<% else %>
 <table>
-  <tr>
-  	<th>ID</th>
-    <th>Name</th>
-    <th>Pay_Type</th>
-    <th>Total_Price</th>
-    <th>Order_State</th>
+  <tr style="font-family: serif; font-size: 120%">
+  	<th width="15%" align="center">ID</th>
+    <th width="15%" align="center">Name</th>
+    <th width="15%" align="center">Pay_Type</th>
+    <th width="15%" align="center">Total_Price</th>
+    <th width="15%" align="center">Order_State</th>
   </tr>
 
 <% @orders.each do |order| %>
   <tr>
-  	<td><%= link_to order.id, :controller => 'orders', :action => :show, :id => order.id %></td>
-    <td><%= order.name %></td>
-    <td><%= order.pay_type %></td>
-    <td><%= number_to_currency(order.price) %></td>
-    <td><%= order.state%></td>
+  	<td align="center"><%= link_to sprintf("%010d",order.id), :controller => 'orders', :action => :show, :id => order.id %></td>
+    <td align="center"><%= order.name %></td>
+    <td align="center"><%= order.pay_type %></td>
+    <td align="center"><%= number_to_currency(order.price) %></td>
+    <td align="center"><%= order.state%></td>
   </tr>
 <% end %>
 </table>
-
+<% end %>
 <br />
 <p><%= will_paginate @orders %> </p>

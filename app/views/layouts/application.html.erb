@@ -20,36 +20,29 @@
     <%= image_tag("logo.png") %>
     <%= @page_title || t('.title') %>
   </div> 
-  <div id="columns"> 
+ <div id="columns">
     <div id="side">
-      <% if @cart %>
+      <% if (@cart && !@hidden) %>
         <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
           <%= render @cart %>
         <% end %>
       <% end %>
  
       <a href="<%= store_url %>"><%= t('.home')%></a><br /> 
-<<<<<<< HEAD
       <%= link_to t('.questions'), :controller => 'questions', :action => :raise%><br />
       <%= link_to t('.news'), :controller => 'store', :action => :news%><br />
       <%= link_to t('.contact'), :controller => 'store', :action => :contact%><br />
       <%= link_to "Help", :controller => 'help', :action => :index %><br />
-      
-=======
-      <%= link_to t('.questions'), :controller => 'store', :action => :question%><br />
-      <%= link_to t('.news'), :controller => 'store', :action => :news%><br />
-      <%= link_to t('.contact'), :controller => 'store', :action => :contact%><br />
-      <%= link_to "Help", :controller => 'help', :action => :index %><br />
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
+
       <%if session[:user_id]%>
          <% if session[:user_type] == 1%>
          <br/>
+         <h4>Management</h4>
          <%=link_to t('.orders'), orders_path %><br/>
          <%=link_to t('.products'), products_path %><br/>
          <%=link_to t('.users'), users_path%><br/>
-<<<<<<< HEAD
-         <%=link_to 'CommentsManagement', comments_path%><br/>
-         <%=link_to 'QuestionsManagement', questions_path%><br />
+         <%=link_to 'Comments', comments_path%><br/>
+         <%=link_to 'Questions', questions_path%><br />
          <br/>
          <% else %>
          <br /><br />
@@ -57,15 +50,6 @@
          <br /><br /><br />
          <span>Hello,</span> <%= session[:user_name] %>
          <br /> 
-=======
-         <%=link_to 'Comments', comments_path%><br/>
-         <%=link_to 'Book in need',book_in_needs_path%><br/>
-         <br/>
-         <% else %>
-         <br/>
-         <%= link_to 'post book requirement', new_book_in_need_path %><br/>
-         <br/>
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
          <% end %>
          <%=button_to t('.logout'), logout_path,:method=>:delete %>
       <%end%>
@@ -81,6 +65,6 @@
     <div id="main"> 
       <%= yield %>
     </div> 
-  </div> 
+  </div>
 </body> 
 </html> 

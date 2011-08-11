@@ -105,4 +105,16 @@ class OrdersController < ApplicationController
                              :conditions => ["user_id = ?", user_id],
                              :order => "id DESC"
   end
+  
+  def ship
+    @order = Order.find(params[:id])
+    @order.state = '已发货'
+    
+    respond_to do |format|
+      if @order.save
+        Notifier.order_shipped(@order).deliver
+        format.html {redirect_to :action => :index}
+      end
+    end
+  end
 end

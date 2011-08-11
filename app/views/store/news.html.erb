@@ -1,5 +1,4 @@
 <h4>好消息：</h4>
-<<<<<<< HEAD
 <ol>
 	<p>新书上架了</p>
 	<% @products.each do |product|%>
@@ -9,13 +8,4 @@
     <%= sanitize(product.description) %><br />
     <% end %>
 </ol>
-=======
-<ul>
-	<li>新书上架了</li>
-	<%= link_to (image_tag(@product.image_url)), {:controller => 'products', :action => 'show', :id => @product.id} %>
-    <h3>Title: <%= link_to @product.title, {:controller => 'products', :action => 'show', :id => @product.id} %></h3> 
-    <span>Author: <%= @product.author%></span>
-    <%= sanitize(@product.description) %>
-</ul>
->>>>>>> aa0b8a2818791fe2b70e9e8427e2729f21fa1720
 

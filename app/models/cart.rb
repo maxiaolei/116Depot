@@ -19,6 +19,10 @@ class Cart < ActiveRecord::Base
   def total_items
     line_items.sum(:quantity)
   end
+  
+  def remove_line_item(item)
+    line_items.delete(item)
+  end
 end
   
   
