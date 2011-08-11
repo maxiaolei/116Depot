@@ -22,16 +22,17 @@
   </div> 
  <div id="columns">
     <div id="side">
+    	
       <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
           <%= render @cart %>
         <% end %>
       <% end %>
  
-      <a href="<%= store_url %>"><%= t('.home')%></a><br /> 
-      <%= link_to t('.questions'), :controller => 'questions', :action => :raise%><br />
-      <%= link_to t('.news'), :controller => 'store', :action => :news%><br />
-      <%= link_to t('.contact'), :controller => 'store', :action => :contact%><br />
+      <%= image_tag("Home.png") %>&nbsp;<a href="<%= store_url %>"><%= t('.home')%></a><br /> 
+      <%= image_tag("Question.png") %>&nbsp;<%= link_to t('.questions'), :controller => 'questions', :action => :raise%><br />
+      <%= image_tag("News.png") %>&nbsp;<%= link_to t('.news'), :controller => 'store', :action => :news%><br />
+      <%= image_tag("Contact.png") %>&nbsp;<%= link_to t('.contact'), :controller => 'store', :action => :contact %><br />
       <%= link_to "Help", :controller => 'help', :action => :index %><br />
       <%if session[:user_id]%>
          <% if session[:user_type] == 1%>
@@ -39,7 +40,7 @@
          <h4>Management</h4>
          <%=link_to t('.orders'), orders_path %><br/>
          <%=link_to t('.products'), products_path %><br/>
-         <%=link_to t('.users'), users_path%><br/>
+         <%= image_tag("User.png") %>&nbsp;<%=link_to t('.users'), users_path%><br/>
          <%=link_to 'Comments', comments_path%><br/>
          <%=link_to 'Questions', questions_path%><br />
          <br/>

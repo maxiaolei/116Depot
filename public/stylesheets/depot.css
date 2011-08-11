@@ -302,9 +302,22 @@
   float: left;
 }
 
-
-
-
+/*
+ * other tags
+ */
+#Contact span{
+	padding-bottom: 2px;
+	height: 10px;
+}
+#side img{
+	width: 22px;
+	height: 20px;
+	margin-bottom: -5px;
+}
+.cart_title img{
+	width: 20px;
+	height: 20px;
+}
 
 
 
