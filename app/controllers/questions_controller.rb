@@ -96,5 +96,6 @@ class QuestionsController < ApplicationController
         format.html {redirect_to :controller => 'questions', :action => :raise}
       end
     end
-  end
+  end  
+
 end

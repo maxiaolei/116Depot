@@ -16,6 +16,10 @@
     <%= f.label :title, t('.title') + ":" %><br />
     <%= f.text_field :title %>
   </div>
+    <div class="field">
+    <%= f.label :category, t('.category') + ":" %><br />
+    <%= f.select :category,  Product::CATEGORY_TYPES %>
+  </div>
   <div class="field">
     <%= f.label :author, t('.author') + ":" %><br />
     <%= f.text_field :author %>

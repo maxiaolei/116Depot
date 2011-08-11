@@ -2,19 +2,19 @@
 
 <table>
   <tr>
-    <th>Product</th>
-    <th>User</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th width="5%" align="center">Product</th>
+    <th width="5%" align="center">User</th>
+    <th width="40%" align="center">Content</th>
+    <th width="5%"></th>
+    <th width="5%"></th>
+    <th width="5%"></th>
   </tr>
 
 <% @comments.each do |comment| %>
   <tr>
-    <td><%= comment.product_id %></td>
-    <td><%= comment.user_id %></td>
-    <td><%= comment.content %></td>
+    <td width="15%" align="center"><%= comment.product_id %></td>
+    <td width="15%" align="center"><%= comment.user_id %></td>
+    <td width="15%" align="center"><%= comment.content %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
     <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -26,3 +26,4 @@
 
 <%= link_to 'New Comment', new_comment_path %>
 <p><%= will_paginate %></p>
+

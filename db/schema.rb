@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110809011502) do
+=======
+ActiveRecord::Schema.define(:version => 20110810023008) do
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
 
   create_table "book_in_needs", :force => true do |t|
     t.string   "title"
@@ -65,6 +69,10 @@ ActiveRecord::Schema.define(:version => 20110809011502) do
     t.datetime "updated_at"
     t.string   "author"
     t.string   "pdf",         :default => "lack"
+<<<<<<< HEAD
+=======
+    t.string   "category"
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
   end
 
   create_table "questions", :force => true do |t|

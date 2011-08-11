@@ -23,4 +23,5 @@ class Order < ActiveRecord::Base
     end
     cart.total_price
   end
+  
 end

@@ -2,7 +2,7 @@
 <% form_tag ({:controller => 'products', :action => :search}) do %>
 <span style="font: 120% bold">Key Word:</span>
 <%=text_field_tag :input, nil, :size => 20%>
-<%=select_tag(:arg, options_for_select(%w{title author}))%>
+<%=select_tag(:arg, options_for_select(%w{title author category}))%>
 <%=submit_tag 'Search'%>
 <% end %> 
 </div>

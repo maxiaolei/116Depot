@@ -22,8 +22,7 @@
   </div> 
  <div id="columns">
     <div id="side">
-    	
-      <% if @cart %>
+      <% if (@cart && !@hidden) %>
         <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
           <%= render @cart %>
         <% end %>
@@ -34,6 +33,7 @@
       <%= image_tag("News.png") %>&nbsp;<%= link_to t('.news'), :controller => 'store', :action => :news%><br />
       <%= image_tag("Contact.png") %>&nbsp;<%= link_to t('.contact'), :controller => 'store', :action => :contact %><br />
       <%= link_to "Help", :controller => 'help', :action => :index %><br />
+
       <%if session[:user_id]%>
          <% if session[:user_type] == 1%>
          <br/>

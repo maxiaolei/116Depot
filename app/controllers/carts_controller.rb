@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_filter :authorize,:only=>[:create,:update,:destroy,:show]
+  skip_before_filter :authorize,:only=>[:create,:update,:destroy,:show, :clear, :set_quantity]
   # GET /carts
   # GET /carts.xml
   
@@ -17,6 +17,7 @@ class CartsController < ApplicationController
   def show
     begin
       @cart = Cart.find(params[:id])
+      @hidden = true
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_url, :notice => 'Invalid cart'
@@ -86,6 +87,28 @@ class CartsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(store_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def clear
+    item = LineItem.find(params[:id])
+    @cart = current_cart
+    @cart.remove_line_item(item)
+    
+    respond_to do |format|
+      format.html {redirect_to(@cart)}
+    end
+    
+  end
+  
+  def set_quantity
+    @cart = current_cart
+    @item = @cart.line_items.find(params[:id])
+    @item.quantity = params[:qty]
+    @item.save!
+    
+    respond_to do |format|
+      format.html {redirect_to(@cart)}
     end
   end
 end

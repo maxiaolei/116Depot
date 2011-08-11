@@ -1,5 +1,5 @@
 Depot::Application.routes.draw do
-  resources :book_in_needs
+  root :to => "store#index", :as => 'store'
 
     get 'admin'=>'admin#index'
   
@@ -12,22 +12,38 @@ Depot::Application.routes.draw do
   
   scope '(:locale)' do
     resources :help
+    
     resources :questions
+    
     resources :users
+    
     resources :orders
+    
     resources :line_items
+    
     resources :carts
+    
     resources :comments
+    
+    resources :book_in_needs
+    
     resources :products do
       get :who_bought, :on => :member
     end
     
+<<<<<<< HEAD
+=======
 
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
     controller :orders do
       get :show_by_user_id
       post :ship
     end
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
     controller :products do
       post :add_comment
       post :search
@@ -58,6 +74,14 @@ Depot::Application.routes.draw do
       get :raise
       post :receive
     end
+<<<<<<< HEAD
+    
+    controller :carts do
+      get :clear
+      post :set_quantity
+    end
+    
+=======
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -115,5 +139,6 @@ Depot::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
   end
 end

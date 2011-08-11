@@ -129,12 +129,14 @@
  
 #columns {
   background: #141;
+  min-height: 50em;
 }
  
 #main {
   margin-left: 17em;
   padding-top: 4ex;
   padding-left: 2em;
+  min-height: 50em;
   background: white;
 }
  
