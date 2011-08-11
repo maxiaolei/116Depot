@@ -1,5 +1,9 @@
 class CartsController < ApplicationController
+<<<<<<< HEAD
   skip_before_filter :authorize,:only=>[:create,:update,:destroy,:show, :clear, :set_quantity]
+=======
+  skip_before_filter :authorize,:only=>[:create,:update,:destroy,:show]
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
   # GET /carts
   # GET /carts.xml
   

@@ -97,5 +97,8 @@ class QuestionsController < ApplicationController
       end
     end
   end
+<<<<<<< HEAD
   
+=======
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
 end

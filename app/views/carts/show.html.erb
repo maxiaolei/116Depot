@@ -1,5 +1,6 @@
 <div class="cart_title"><h4>Your Cart:</h4></title>
 <table>
+<<<<<<< HEAD
 	<tr>
 	  <th width='5%'></th>
 	  <th align='left' width='15%'>Title</th>
@@ -49,3 +50,27 @@
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
 <% end %>
+=======
+	<% for item in @cart.line_items %>
+	<tr>
+	  <th align='left'>Title</th>
+	  <th>Quantity</th>
+	  <th>Price</th>
+	</tr>
+	<tr>
+	 <td><%= item.product.title %></td>
+	 <td><%= item.quantity %></td> 
+	 <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+	</tr>
+	<% end %>
+	<tr class="total_line">
+	  <td colspan="2">Total_Price:</td>
+	  <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+	</tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+<%= button_to 'Check Out', get_url, :method=>:get %>
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
+>>>>>>> d222ab64ab60480aa13bdf224fde39635364327d
