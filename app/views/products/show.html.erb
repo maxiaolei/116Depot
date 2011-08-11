@@ -57,8 +57,8 @@
 <% end %>
 
 <% if session[:user_id]%>
-<%form_tag ({:action => :add_comment, :id => @product.id }) do%>
-  <%= text_area_tag (:user_comment,nil, :cols => 80, :rows => 3)%><br/>
+<%= form_tag({:action => :add_comment, :id => @product.id }) do%>
+  <%= text_area_tag(:user_comment,nil, :cols => 80, :rows => 3)%><br/>
   <%= submit_tag 'Add Comment'%>
 <% end %>
 <% end %>

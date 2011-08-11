@@ -16,8 +16,8 @@
 	 	<%= link_to item.product.title, :controller => 'products', 
 	 	            :action => :show, :id => item.product.id %></td>
 	 <td align='center'>
-	 <%form_tag (:action => :set_quantity, :id => item.id) do %>
-	   <%= text_field_tag (:qty, item.quantity, :size => 1) %>
+	 <%= form_tag(:action => :set_quantity, :id => item.id) do %>
+	   <%= text_field_tag(:qty, item.quantity, :size => 1) %>
 	   <%= submit_tag "Update" %>
 	 <% end %>
 	 </td>
