@@ -3,6 +3,12 @@ require 'test_helper'
 class OrdersControllerTest < ActionController::TestCase
   setup do
     @order = orders(:one)
+	@update = {
+	  :name => 'maxiaolei',
+	  :address => 'web116',
+	  :email => '116@qq.com',
+	  :pay_type => 'Check'
+	}
   end
 
   test "should get index" do
@@ -28,7 +34,7 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should create order" do
     assert_difference('Order.count') do
-      post :create, :order => @order.attributes
+      post :create, :order => @update
     end
 
     assert_redirected_to store_path
@@ -45,7 +51,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should update order" do
-    put :update, :id => @order.to_param, :order => @order.attributes
+    put :update, :id => @order.to_param, :order => @update
     assert_redirected_to order_path(assigns(:order))
   end
 

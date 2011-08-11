@@ -321,7 +321,11 @@
 	height: 20px;
 }
 
-
+#search img{
+        width: 22px;
+	height: 20px;
+	margin-bottom: -5px;
+}
 
 
 

@@ -3,9 +3,10 @@
 <% end %>
 
 <div align='right'>
-<% form_tag ({:controller => 'products', :action => :search}) do %>
+<%= form_tag({:controller => 'products', :action => :search}) do %>
 <span style="font: 120% bold">Key Word:</span>
 <%=text_field_tag :input, nil, :size => 20%>
+<span id="search"><%= image_tag("Search.png") %></span>
 <%=select_tag(:arg, options_for_select(%w{title author category}))%>
 <%=submit_tag 'Search'%>
 <% end %> 
@@ -17,12 +18,12 @@
   <div class="entry"> 
     <%= link_to (image_tag(product.image_url)), {:controller => 'products', :action => 'show', :id => product.id} %>
     <h3>Title: <%= link_to product.title, {:controller => 'products', :action => 'show', :id => product.id} %></h3> 
-    <span>Category: <%= product.category%></span></br>
-    <span>Author: <%= product.author%></span></br>
+    <span>Category: <%= product.category%></span><br />
+    <span>Author: <%= product.author%></span><br />
     <% if product.pdf == 'lack' %>
     <span>Try Reading: lack</span><br />
     <% else %>
-    <%= link_to t('.Try Reading'),product.pdf %></br>
+    <%= link_to t('.Try Reading'),product.pdf %><br />
     <% end %>
     <%= sanitize(product.description) %>
     <div class="price_line"> 
