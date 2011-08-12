@@ -46,3 +46,136 @@ Product.create(:title => 'Rails Test Prescriptions',
   :image_url => '/images/rtp.jpg',
   :pdf => '/pdfs/3.pdf',
   :price => 43.75)
+
+# . . .  
+Product.create(:title => 'aiwen',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/aiwen.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+  
+# . . .  
+Product.create(:title => 'linux',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/linux.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+  
+  # . . .  
+Product.create(:title => 'aiyutong',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/aiyutong.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+  
+# . . .  
+Product.create(:title => 'yanglan',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/yanglan.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+  
+ # . . .  
+Product.create(:title => 'web service',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/web-service.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+# . . .  
+Product.create(:title => 'harry1',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/harry.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+# . . .  
+Product.create(:title => 'harry2',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/harry_2.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
+# . . .  
+Product.create(:title => 'huaiyun',
+  :author => 'zh',
+  :category => 'hardware',
+  :description => 
+    %{<p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>},
+  :image_url => '/images/huaiyun.jpg',
+  :pdf => '/pdfs/3.pdf',
+  :price => 18.10)
