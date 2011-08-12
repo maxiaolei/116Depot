@@ -110,7 +110,11 @@ class OrdersController < ApplicationController
   def ship
     @order = Order.find(params[:id])
     @order.state = '已发货'
-    
+    LineItem.find_all_by_order_id(@order.id).each do |item|
+      @product = Product.find(item.product_id)
+      @product.sold += item.quantity
+      @product.save
+    end    
     respond_to do |format|
       if @order.save
         Notifier.order_shipped(@order).deliver

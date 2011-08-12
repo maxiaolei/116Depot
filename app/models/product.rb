@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
 validates :title, :description, :image_url, :presence => true
 validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
+validates :sold, :numericality => {:greater_than_or_equal_to => 0}
 validates :title, :uniqueness => true
 validates_length_of :description,:minimum=>1,:message=>"is too short"
 validates_length_of :title,:maximum=>50,:message=>" is too long"
@@ -29,4 +30,5 @@ def ensure_not_referenced_by_any_line_item
     return false
   end
 end
+
 end
