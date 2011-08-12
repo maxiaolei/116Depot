@@ -44,4 +44,5 @@ Product.create(:title => 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   :image_url => '/images/rtp.jpg',
+  :pdf => '/pdfs/3.pdf',
   :price => 43.75)
