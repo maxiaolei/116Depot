@@ -70,6 +70,7 @@ Depot::Application.routes.draw do
     end
     
     controller :carts do
+	  get :show
       get :clear
       post :set_quantity
     end
