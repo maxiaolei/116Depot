@@ -1,43 +1,21 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-
-<p>
-  <b><%= t('.order_show_name')+":" %></b>
-  <%= @order.name %>
-</p>
-
-<p>
-  <b><%= t('.order_show_address')+":" %></b>
-  <%= @order.address %>
-</p>
-
-<p>
-  <b><%= t('.order_show_email')+":" %></b>
-  <%= @order.email %>
-</p>
-
-<p>
-  <b><%= t('.order_show_pay_type')+":" %></b>
-  <%= @order.pay_type %>
-</p>
-
-<p>
-	<b>Order_Type:</b>
-	<%= @order.state%>
-</p>
-<p>
-	<b>Order Details:</b><br />
-	<% @order.line_items.each do |item|%>
+<div style="border: 1px;">
+<ul">
+	<li><b><%= t('.order_show_name')+":" %></b><%= @order.name %></li><br />
+	<li><b><%= t('.order_show_address')+":" %></b><%= @order.address %></li><br />
+	<li><b><%= t('.order_show_email')+":" %></b><%= @order.email %></li><br />
+	<li><b><%= t('.order_show_pay_type')+":" %></b> <%= @order.pay_type %></li><br />
+	<li><b>Order_Type:</b><%= @order.state%></li><br />
+	<li><b>Total Price:</b><%= number_to_currency(@order.price)%></li><br />
+	<li><b>Order Details:</b></li><br />
+	  <% @order.line_items.each do |item|%>
 	  <%= item.quantity %>&times;<%= item.product.title %>
 	  &nbsp;&nbsp;&nbsp;<%= number_to_currency(item.total_price) %><br />
 	  <% end %>
-</p>
-<p>
-	<b>Total Price:</b>
-	<%= number_to_currency(@order.price)%>
-</p>
-
+</ul>
+</div>
 
 <% if session[:user_type]==1%>
   <% if @order.state == '未发货'%>

@@ -1,0 +1,15 @@
+h3 { font-family: sans-serif; margin: 0; }
+/*h2 { clear: both; font-family: sans-serif; color: #8ac; padding-top: 1em; margin: 0 0 1em; }*/
+ul img { border: 0; width:80px; height:100px; }
+
+#new_books { margin: 0; padding: 0; }
+#new_books li {
+  list-style-type: none; float: left; margin: 0 0 0 1em;
+  border: 10px solid #ddd; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}
+
+#well_sold_books { margin: 0; padding: 0; }
+#well_sold_books li {
+  list-style-type: none; float: left; margin: 0 0 0 1em;
+  border: 10px solid #ddd; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}

@@ -1,0 +1,14 @@
+.image {
+	float: left;
+	margin-right: 15px;
+	width: 200px;
+	height: 250px;
+}
+
+.desc {
+	margin-left: 10px;
+}
+
+#try_reading{
+	margin-top: 5px;
+}

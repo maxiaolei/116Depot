@@ -105,17 +105,38 @@ class ProductsController < ApplicationController
   end
   
   def search
-    args = params[:arg]
-    if args == 'title'
-      #@products = Product.find(:all, :conditions => ["title like ?", "%" + params[:input] + "%"])
-      @products = Product.paginate :page => params[:page], :per_page => 3, :conditions => ["title like ?", "%" + params[:input] + "%"]
-    elsif args == 'author'
-      #@products = Product.find(:all, :conditions => ["author like ?", "%" + params[:input] + "%"])
-      @products = Product.paginate :page => params[:page], :per_page => 3, :conditions => ["author like ?", "%" + params[:input] + "%"]
-    elsif args == 'category'
-      #@products = Product.find(:all, :conditions => ["category like ?", "%" + params[:input] + "%"])
-      @products = Product.paginate :page => params[:page], :per_page => 3, :conditions => ["category like ?", "%" + params[:input] + "%"]
+    inputs = params[:input].split
+    temp = []
+    @products = []
+    inputs.each do |input|
+      temp = Product.find :all, 
+                          :conditions => ["title like ? or category like ? or author like ? or description like ?", 
+                                          "%" + input + "%", "%" + input + "%", "%" + input + "%", "%" + input + "%"]
+      @products = @products | temp
     end
+    
+    inputs.each do |input|
+      exp = Regexp.new(input, Regexp::IGNORECASE)
+      if exp =~ "<font color='red'></font>"
+        next
+      end
+       
+      @products.each do |product|
+        product.title = product.title.gsub(exp){ |matched|
+          "<font color=red>" + matched + "</font>" 
+        }
+        product.category = product.category.gsub(exp){ |matched|
+          "<font color='red'>" + matched + "</font>" 
+        }
+        product.author = product.author.gsub(exp){ |matched|
+          "<font color='red'>" + matched + "</font>" 
+        }
+        product.description = product.description.gsub(exp){ |matched|
+          "<font color='red'>" + matched + "</font>" 
+        }
+      end
+    end
+    
     @cart = current_cart
     respond_to do |format|
       format.html

@@ -17,7 +17,7 @@ class StoreController < ApplicationController
   
   def news
     @cart = current_cart
-    #@products = Product.find(:all, :order => "id DESC", :limit => 2)
-    @products = Product.find_by_sql("select * from products order by id DESC limit 2")
+    @products1 = Product.find_by_sql("select * from products order by id DESC limit 5")
+    @products2 = Product.find_by_sql("select * from products order by sold DESC limit 5")
   end
 end

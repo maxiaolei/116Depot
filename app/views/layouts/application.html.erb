@@ -32,23 +32,23 @@
       <%= image_tag("Question.png") %>&nbsp;<%= link_to t('.questions'), :controller => 'questions', :action => :raise%><br />
       <%= image_tag("News.png") %>&nbsp;<%= link_to t('.news'), :controller => 'store', :action => :news%><br />
       <%= image_tag("Contact.png") %>&nbsp;<%= link_to t('.contact'), :controller => 'store', :action => :contact %><br />
-      <%= link_to "Help", :controller => 'help', :action => :index %><br />
+      <%= image_tag("help.png") %>&nbsp;<%= link_to "Help", :controller => 'help', :action => :index %><br />
 
       <%if session[:user_id]%>
          <% if session[:user_type] == 1%>
          <br/>
          <h4>Management</h4>
-         <%=link_to t('.orders'), orders_path %><br/>
-         <%=link_to t('.products'), products_path %><br/>
+         <%= image_tag("orders.png") %>&nbsp;<%=link_to t('.orders'), orders_path %><br/>
+         <%= image_tag("products.png") %>&nbsp;<%=link_to t('.products'), products_path %><br/>
          <%= image_tag("User.png") %>&nbsp;<%=link_to t('.users'), users_path%><br/>
-         <%=link_to 'Comments', comments_path%><br/>
-         <%=link_to 'Questions', questions_path%><br />
+         <%= image_tag("comments.jpg") %>&nbsp;<%=link_to 'Comments', comments_path%><br/>
+         <%= image_tag("questions.png") %>&nbsp;<%=link_to 'Questions', questions_path%><br />
          <br/>
          <% else %>
          <br /><br />
-         <%= link_to 'My Orders', :controller => 'orders', :action => :show_by_user_id %>
+         <%= image_tag("orders.png") %>&nbsp;<%= link_to 'My Orders', :controller => 'orders', :action => :show_by_user_id %>
          <br /><br /><br />
-         <span>Hello,</span> <%= session[:user_name] %>
+         <span><%= image_tag("welcome.png") %>&nbsp;Hello,</span> <%= session[:user_name] %>
          <br /> 
          <% end %>
          <%=button_to t('.logout'), logout_path,:method=>:delete %>
