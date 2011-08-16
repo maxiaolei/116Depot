@@ -1,0 +1,21 @@
+.table table{
+	border-collapse: collapse;
+	border:solid 2px #EAF2D3;
+	line-height: 20px;
+	width:700px;
+}
+.table table tr{
+	border-collapse: collapse;
+	border:solid 2px #EAF2D3;
+}
+.table table tr td,th{
+	border-collapse: collapse;
+	border:solid 2px #EAF2D3;
+	padding: 3px;
+	
+}
+.table table tr th{
+	background-color: #66CDAA;
+	font-size: 18px;
+	color: white;
+}

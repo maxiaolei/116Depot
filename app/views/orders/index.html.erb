@@ -1,5 +1,8 @@
+<%= stylesheet_link_tag "table" %>
+
 <h1><%= t('.order_list_title')%></h1>
 
+<div class="table">
 <table>
   <tr style="font-family: serif; font-size: 120%" >
   	<th width="15%" align="center">ID</th>
@@ -7,6 +10,7 @@
     <th width="15%" align="center"><%= t('.order_list_pay_type')%></th>
     <th width="15%" align="center">Total_Price</th>
     <th width="15%" align="center">Order_State</th>
+    <th colspan=4>Operations</th>
   </tr>
 
 <% @orders.each do |order| %>
@@ -27,6 +31,7 @@
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
