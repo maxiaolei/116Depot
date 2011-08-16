@@ -39,3 +39,13 @@
   color: #bfb;
   font-size: small;
 }
+
+#side img{
+	width: 22px;
+	height: 20px;
+	margin-bottom: -5px;
+}
+
+img {
+	height: auto;
+}

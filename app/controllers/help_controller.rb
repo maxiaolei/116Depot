@@ -40,4 +40,21 @@ class HelpController < ApplicationController
   def ordermanage
   end
   
+  def countnumber
+  end
+  
+  def tryreading
+  end
+  
+  def askquestions
+  end
+  
+  def usercheckorder
+  end
+  
+  def shipemail
+  end
+  
+  def recommendbook
+  end
 end
