@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
-  skip_before_filter :authorize, :only => [:show, :add_comment, :search]
+  skip_before_filter :authorize, :only => [:show, :add_comment, :search, :add_star_level]
   def index
     @products = Product.paginate :page => params[:page], :per_page => 5
 
@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @star = false
+    if session[:user_id] 
+      if add_star_check(params[:id],session[:user_id])
+        @star = true
+      end
+    end   
     @cart = current_cart
 
     respond_to do |format|
@@ -119,6 +125,30 @@ class ProductsController < ApplicationController
     @cart = current_cart
     respond_to do |format|
       format.html
+    end
+  end
+  
+  def add_star_level
+    @product = Product.find(params[:id])
+    if add_star_check(params[:id],session[:user_id])
+      @product.level = (@product.level*@product.rating_count+params[:score].to_f)/(@product.rating_count+1)
+      @product.rating_count += 1
+      @starrate = StarRate.new(:product_id=>params[:id],:user_id=>session[:user_id])
+      respond_to do |format|
+        if @starrate.save and @product.save
+          format.html
+          format.js
+        end
+      end
+    end 
+  end
+  
+  def add_star_check(product_id,user_id)
+    temp=StarRate.find_by_product_id_and_user_id(product_id,user_id)
+    if temp
+      false
+    else
+      true
     end
   end
   

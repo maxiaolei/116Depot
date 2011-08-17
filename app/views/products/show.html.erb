@@ -15,7 +15,20 @@
   <b><%= t('.product_show_author') +":"%></b>
   <%= @product.author %>
 </p>
-
+<p>
+  <b><%= t('.product_show_sold') +":"%></b>
+  <%= @product.sold %>
+</p>
+<%= javascript_tag "var product_level="+@product.level.to_s+";" %>
+<% if @star %>
+<span id="star_edit" class="stars"><b><%= t('.level')+": " %></b>
+</span><br /><input id="addstar" type="button" value="submit" onclick="<%= remote_function(:url=>{:action=>:add_star_level,:id=>@product.id},
+:before=>"$.fn.raty.readOnly(true,'star_edit')",
+:complete=>"$('#addstar').hide();",
+:with=>"'score='+document.getElementById('star_edit-score').value") %>" />
+<% else %>
+<span id="star_read" class="stars"><b><%= t('.level')+": " %></b></span><br />
+<% end %>
 <p>
   <b><%= t('.product_show_description') + ":"%></b>
   <%= sanitize(@product.description) %>
@@ -62,7 +75,9 @@
   <%= submit_tag 'Add Comment'%>
 <% end %>
 <% end %>
-
+<% javascript_tag "document.getElementById('star_edit-score').onchange()="+remote_function(:url=>{:action=>:add_star_level,:id=>@product.id},
+:complete=>"$.fn.raty.readOnly(true,'star_edit')",
+:with=>"'score='+encodeURIComponent(document.getElementById('star_edit-score').value)")+";"%>
 
 
 

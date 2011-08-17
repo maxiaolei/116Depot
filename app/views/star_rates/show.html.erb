@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @star_rate.product_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @star_rate.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_star_rate_path(@star_rate) %> |
+<%= link_to 'Back', star_rates_path %>

@@ -1,0 +1,25 @@
+<h1>Listing star_rates</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @star_rates.each do |star_rate| %>
+  <tr>
+    <td><%= star_rate.product_id %></td>
+    <td><%= star_rate.user_id %></td>
+    <td><%= link_to 'Show', star_rate %></td>
+    <td><%= link_to 'Edit', edit_star_rate_path(star_rate) %></td>
+    <td><%= link_to 'Destroy', star_rate, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Star rate', new_star_rate_path %>

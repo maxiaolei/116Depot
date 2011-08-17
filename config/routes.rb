@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :star_rates
+
   root :to => "store#index", :as => 'store'
 
     get 'admin'=>'admin#index'
@@ -41,6 +43,7 @@ Depot::Application.routes.draw do
     controller :products do
       post :add_comment
       post :search
+      post :add_star_level
     end
     
     controller :store do

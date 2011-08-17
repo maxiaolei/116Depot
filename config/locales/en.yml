@@ -109,6 +109,8 @@ en:
       product_show_price:       "Price"
       product_show_edit:        "Edit"
       product_show_back:        "Back" 
+      level:                    "Level"
+      product_show_sold:        "Sold"
     form:
       title:         "Title"
       category:      "Category"

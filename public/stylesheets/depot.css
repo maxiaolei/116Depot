@@ -327,7 +327,16 @@
 	margin-bottom: -5px;
 }
 
-
+#store .entry .stars img{
+	float: left;	
+	width: 20px;
+	margin-bottom: -5px;
+}
+/*#store .entry span#stars #star_img:hover{	
+	float: left;
+	background-color:#FFFF33;
+	margin-bottom: -5px;
+}*/
 
 
 
