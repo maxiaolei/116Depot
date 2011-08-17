@@ -1,13 +1,14 @@
+<%= stylesheet_link_tag "table"%>
+
 <h1>Listing questions</h1>
 
+<div class="table">
 <table>
   <tr>
     <th>User</th>
     <th>Problem</th>
     <th>Answer</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan=3>Operation</th>
   </tr>
 
 <% @questions.each do |question| %>
@@ -21,6 +22,7 @@
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 

@@ -13,19 +13,25 @@
   </div> 
   <div id="columns"> 
     <div id="side">
-      <p><%= link_to "Home", store_url %></p>
+      <p><%= image_tag("Home.png") %>&nbsp;<%= link_to "Home", store_url %></p>
       &nbsp;<%= link_to "News", :controller => 'help', :action => :seenews %><br />
       &nbsp;<%= link_to "ContactUs", :controller => 'help', :action => :contactus %><br />
       &nbsp;<%= link_to "Language", :controller => 'help', :action => :language %><br />
       &nbsp;<%= link_to "HowToSearch", :controller => 'help', :action => :howtosearch %><br />
-      <p>Customer</p>
+      &nbsp;<%= link_to "SalesStatistics", :controller => 'help', :action => :countnumber %><br />
+      <p><%= image_tag("buyer.png") %>&nbsp;Customer</p>
       &nbsp;<%= link_to "CustomerLogin", :controller => 'help',:action =>:customerlogin %><br />
       &nbsp;<%= link_to "CustomerRegister", :controller => 'help',:action =>:customerregister %><br />
       &nbsp;<%= link_to "CustomerLogout", :controller => 'help', :action => :customerlogout%><br />
       &nbsp;<%= link_to "HowToBuy", :controller => 'help', :action => :howtobuy %><br />
       &nbsp;<%= link_to "SendEmail", :controller => 'help', :action => :sendemail %><br />
       &nbsp;<%= link_to "AddComment", :controller => 'help', :action => :addcomment %><br />
-      <p>Seller</p>   
+      &nbsp;<%= link_to "TryReading", :controller => 'help', :action => :tryreading %><br />
+      &nbsp;<%= link_to "AskQuestions", :controller => 'help', :action => :askquestions %><br />
+      &nbsp;<%= link_to "UserCheckOrder", :controller => 'help', :action => :usercheckorder %><br />
+      &nbsp;<%= link_to "ReceiveShipEmail", :controller => 'help', :action => :shipemail %><br />
+      &nbsp;<%= link_to "BookRecommend", :controller => 'help', :action => :recommendbook %><br />
+      <p><%= image_tag("seller.gif") %>&nbsp;Seller</p>   
       &nbsp;<%= link_to "ProductManagement", :controller => 'help', :action => :productmanage %><br />
       &nbsp;<%= link_to "OrderManagement", :controller => 'help', :action => :ordermanage %><br />
     </div> 

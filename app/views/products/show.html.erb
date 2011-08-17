@@ -1,18 +1,41 @@
+<%= stylesheet_link_tag "product_show" %>
 <%if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
+
+<div class='image'>
 <p>
-  <b><%= t('.product_show_title') +":"%></b>
+	<img src="<%= @product.image_url %>" alt="<%=@product.title %>" /><br />
+   
+   <div id="try_reading">
+   <%= image_tag "pig_head.png", :width => 15, :height => 15 %>
+   <% if @product.pdf == 'lack' %>
+   <b>Try Reading: lack</b>
+   <% else %>
+   <b><%= link_to t('.Try Reading'),@product.pdf %></b>
+   <% end %>
+   </div>
+</p>
+</div>
+
+<div class="desc">
+<table>
+  <tr>
+  <td>
+  <b><%= image_tag "ico-globe.jpg", :width => 15, :height => 15 %>
+  	 <%= t('.product_show_title') +":"%></b>
   <%= @product.title %>
-</p>
-
-<p>
-  <b><%= t('.product_show_category') +":"%></b>
+  </td>
+  <td>
+  <b><%= image_tag "ico-globe.jpg", :width => 15, :height => 15 %>
+  	<%= t('.product_show_category') +":"%></b>
   <%= @product.category %>
-</p>
-
-<p>
-  <b><%= t('.product_show_author') +":"%></b>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <b><%= image_tag "ico-globe.jpg", :width => 15, :height => 15 %>
+  	<%= t('.product_show_author') +":"%></b>
   <%= @product.author %>
 </p>
 <p>
@@ -29,39 +52,36 @@
 <% else %>
 <span id="star_read" class="stars"><b><%= t('.level')+": " %></b></span><br />
 <% end %>
+  </td>
+  <td>
+  <b><%= image_tag "ico-globe.jpg", :width => 15, :height => 15 %>
+  	<%= t('.product_show_price') + ":" %></b>
+    <%= number_to_currency(@product.price) %>
+  </td>
+   </tr>
+</table>
 <p>
-  <b><%= t('.product_show_description') + ":"%></b>
+  <b><%= image_tag "ico-globe.jpg", :width => 15, :height => 15 %>
+  	<%= t('.product_show_description') + ":"%></b>
   <%= sanitize(@product.description) %>
+    <%= button_to 'Add To Cart', line_items_path(:product_id => @product.id),
+                  :remote => true %>
 </p>
-<p>
-<% if @product.pdf == 'lack' %>
-   <b>Try Reading: lack</b>
-<% else %>
-   <%= link_to t('.Try Reading'),@product.pdf %></br>
-<% end %>
-</p>
-<p>
-	<img src="<%= @product.image_url %>" alt="<%=@product.title %>" />
-</p>
-<p>
-  <b><%= t('.product_show_price') + ":" %></b>
-  <%= number_to_currency(@product.price) %>
-  <%= button_to 'Add To Cart', line_items_path(:product_id => @product.id),
-        :remote => true %>
-</p>
+</div>
+
 
 <% if session[:user_type] == 1%>
 <%= link_to t('.product_show_edit'), edit_product_path(@product) %> |
 <%= link_to t('.product_show_back'), products_path %>
 <% end %>
 
-<br /><br />
+<br /><br /><br /><br />
 <% unless @product.comments.blank? %>
-<h3>Comments About The Product:</h3>
+<h3>Comments About The Product</h3>
 <% puts @product.comments %>
   <% @product.comments.each do  |comment|%>
   <div class="<%= cycle('comment_odd','comment_even') %>">
-    <span style='font: 120% bold'><%= comment.user.name %></span>:
+    <h5><%= image_tag "people.gif", :width => 15, :height => 15 %><span><%= comment.user.name %></span>:</h5>
     <p>
     	<%= comment.content %>
     </p>

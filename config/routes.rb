@@ -65,6 +65,12 @@ Depot::Application.routes.draw do
       get :contactus
       get :productmanage
       get :ordermanage
+      get :countnumber
+      get :tryreading
+      get :askquestions
+      get :usercheckorder
+      get :shipemail
+      get :recommendbook
     end
     
     controller :questions do

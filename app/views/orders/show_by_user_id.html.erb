@@ -1,8 +1,11 @@
+<%= stylesheet_link_tag "table"%>
+
 <h1>Your Orders</h1>
 
 <% if @orders.blank? %>
  <h2 style="font-family:serif">You have no orders at present, hurry to create one.</h2>
 <% else %>
+<div class="table">
 <table>
   <tr style="font-family: serif; font-size: 120%">
   	<th width="15%" align="center">ID</th>
@@ -22,6 +25,7 @@
   </tr>
 <% end %>
 </table>
+</div>
 <% end %>
 <br />
 <p><%= will_paginate @orders %> </p>

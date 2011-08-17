@@ -1,11 +1,16 @@
+<%= stylesheet_link_tag "table"%>
+
 <h1><%= t('.title')%></h1>
 <% if notice %>
 <p id="notice"><%=notice%></p>
 <% end %>
+
+<div class="table">
 <table>
   <tr>
     <th width="20%" align="center"><%= t('.name')%></th>
     <th width="20%" align="center">Type</th>
+    <th colspan=3>Operation</th>
   </tr>
 
 <% @users.each do |user| %>
@@ -18,6 +23,7 @@
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
