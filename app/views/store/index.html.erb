@@ -12,7 +12,9 @@
 </div>
 
 <h1><%= t('.title_html')%></h1> 
- <%= javascript_tag "var id=new Array(3);var level=new Array(3);"%>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.raty.js" %>
+<%= javascript_tag "var id=new Array(3);var level=new Array(3);"%>
 <% @products.each do |product| %>
   <div class="entry"> 
   	<%= javascript_tag "id.push('#star_"+product.id.to_s+"');level.push("+product.level.to_s+");"%>

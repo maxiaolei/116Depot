@@ -42,6 +42,8 @@
   <b><%= t('.product_show_sold') +":"%></b>
   <%= @product.sold %>
 </p>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.raty.js" %>
 <%= javascript_tag "var product_level="+@product.level.to_s+";" %>
 <% if @star %>
 <span id="star_edit" class="stars"><b><%= t('.level')+": " %></b>
@@ -95,9 +97,3 @@
   <%= submit_tag 'Add Comment'%>
 <% end %>
 <% end %>
-<% javascript_tag "document.getElementById('star_edit-score').onchange()="+remote_function(:url=>{:action=>:add_star_level,:id=>@product.id},
-:complete=>"$.fn.raty.readOnly(true,'star_edit')",
-:with=>"'score='+encodeURIComponent(document.getElementById('star_edit-score').value)")+";"%>
-
-
-
