@@ -25,3 +25,18 @@
     <% end %>
 </ul>
 </div>
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br />
+<div>
+<h3>评分最高书推荐</h3>
+<ul id="high_rate_books">
+	<% @products3.each do |product|%>
+	<li>
+		<%= link_to (image_tag(product.image_url, :alt => product.title)), 
+		    {:controller => 'products', :action => 'show', :id => product.id},
+		    :title => product.title %>
+	</li>
+    <% end %>
+</ul>
+</div>

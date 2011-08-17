@@ -136,7 +136,7 @@
   margin-left: 17em;
   padding-top: 4ex;
   padding-left: 2em;
-  min-height: 50em;
+  min-height: 52em;
   background: white;
 }
  
@@ -146,7 +146,7 @@
   padding-left: 1em;
   padding-bottom: 1em;
   width: 16em;
-  height: 300%;
+  /*height: 300%;*/
   background: #141;
   color: #bfb;
 }
@@ -334,11 +334,10 @@
 	width: 20px;
 	margin-bottom: -5px;
 }
-/*#store .entry span#stars #star_img:hover{	
-	float: left;
-	background-color:#FFFF33;
-	margin-bottom: -5px;
-}*/
+#foot{
+	text-align: center;
+	border-top: 1px solid;
+}
 
 
 

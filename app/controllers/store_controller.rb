@@ -19,5 +19,6 @@ class StoreController < ApplicationController
     @cart = current_cart
     @products1 = Product.find_by_sql("select * from products order by id DESC limit 5")
     @products2 = Product.find_by_sql("select * from products order by sold DESC limit 5")
+    @products3 = Product.find_by_sql("select * from products order by level DESC limit 5")
   end
 end

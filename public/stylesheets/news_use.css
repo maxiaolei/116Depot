@@ -13,3 +13,9 @@ ul img { border: 0; width:80px; height:100px; }
   list-style-type: none; float: left; margin: 0 0 0 1em;
   border: 10px solid #ddd; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
 }
+
+#high_rate_books { margin: 0; padding: 0; }
+#high_rate_books li {
+  list-style-type: none; float: left; margin: 0 0 0 1em;
+  border: 10px solid #ddd; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}
