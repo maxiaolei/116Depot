@@ -329,10 +329,14 @@
 	margin-bottom: -5px;
 }
 
-#store .entry .stars img{
+#store .entry #stars img{
+	background-color: #888888;
 	float: left;	
 	width: 20px;
 	margin-bottom: -5px;
+}
+#store .entry #stars img.stars{
+	background-color: #ffff33;
 }
 #foot{
 	text-align: center;

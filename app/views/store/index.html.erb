@@ -12,18 +12,21 @@
 </div>
 
 <h1><%= t('.title_html')%></h1> 
-<%= javascript_include_tag "jquery.js" %>
-<%= javascript_include_tag "jquery.raty.js" %>
-<%= javascript_tag "var id=new Array(3);var level=new Array(3);"%>
 <% @products.each do |product| %>
   <div class="entry"> 
-  	<%= javascript_tag "id.push('#star_"+product.id.to_s+"');level.push("+product.level.to_s+");"%>
     <%= link_to (image_tag(product.image_url)), {:controller => 'products', :action => 'show', :id => product.id} %>
     <h3>Title: <%= link_to product.title, {:controller => 'products', :action => 'show', :id => product.id} %></h3>     
     <span>Category: <%= product.category %></span><br />    
     <span>Author: <%= product.author %></span><br />
     <span>Sold: <%= product.sold %></span><br />
-    <span id="star_<%= product.id %>" class="stars"></span>
+	<% 5.times do |t| %>
+	<% if product.level > t %>
+    <span id="stars"><%= image_tag "star_0.png",:class=>"stars" %></span>
+	<% else %>
+	<span id="stars"><%= image_tag "star_0.png" %></span>
+	<% end %>
+	<% end %>
+	<b><%= product.level%>&nbsp;stars</b><br />
     <% if product.pdf == 'lack' %>
     <span >Try Reading: lack</span><br />
     <% else %>
