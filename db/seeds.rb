@@ -179,3 +179,8 @@ Product.create(:title => 'huaiyun',
   :image_url => '/images/huaiyun.jpg',
   :pdf => '/pdfs/3.pdf',
   :price => 18.10)
+  
+User.create(:name => 'web116',
+  :password => 'web116',
+  :password_confirmation => 'web116',
+  :usertype => 1)
